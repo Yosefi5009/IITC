@@ -132,4 +132,81 @@ else console.log("Invaild username or password.")
 
 validateLogin(username,password)
 
-//Done.
+//Substring Extraction:
+function extractInitials(firstName,lastName)
+{
+let CharacterFirstName = firstName[0].toUpperCase()
+let CharacterLastName = lastName[0].toUpperCase()
+let TwoCharactersNameWithDot = CharacterFirstName+"."+CharacterLastName
+console.log(TwoCharactersNameWithDot)
+}
+
+extractInitials(firstName,lastName)
+
+//String Replacement:
+let email = "yosefisabag@gmail.com"
+
+function maskEmail(email)
+{
+let ReplaceEmail = email.replace("yosefisabag","*****")
+console.log(ReplaceEmail)
+}
+
+maskEmail(email)
+
+//Nested If-Else:
+let score = 91
+
+function gradeCalculator(score)
+{
+if (score >= 90)
+    return console.log("A")
+else if (score >= 80)
+    return console.log("B")
+else if (score >= 70)
+    return console.log("C")
+else if (score >= 60)
+    return console.log("D")
+else 
+return console.log("F")
+}
+gradeCalculator(score)
+
+//Complex Boolean Conditions:
+isCitizen = true
+
+function canVote(age,isCitizen)
+{
+if (age > 18 && isCitizen === true)
+    return console.log("You are eligible to vote.")
+else return console.log("You are not eligible to vote.")    
+}
+
+canVote(age,isCitizen)
+
+//Capitalize First Letter:
+let word = "java"
+function capitalize(word)
+{
+let CapsFirstLetter = word[0].toUpperCase() + word[1] + word[2] + word[3]
+return console.log(CapsFirstLetter)
+    
+}
+
+capitalize(word)
+
+//Check Substring:
+let mainString = "Joseph"
+let subString = "Yoseph"
+
+function containSubstring(mainString, subString)
+{
+let CombineStrings = mainString + subString
+let SpaceWords = CombineStrings.replace("JosephYoseph", "Joseph Yoseph")
+let CheckMatch = SpaceWords.includes("oseph")
+console.log(CheckMatch)
+return
+}
+
+containSubstring(mainString,subString)
+
