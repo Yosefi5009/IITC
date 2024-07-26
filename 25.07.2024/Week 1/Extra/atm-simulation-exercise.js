@@ -2,7 +2,7 @@
 
 // ## Objective
 // Create a simple ATM (Automated Teller Machine) simulation using JavaScript. This project will cover variables, arithmetic operations, logical operators, comparison operators, and assignment operators.
-console.log("Welcome to the ATM.\n ");
+// console.log("Welcome to the ATM.\n ");
 // ## Part 1: Variable Initialization
 
 // ### Task
@@ -187,7 +187,7 @@ function main() {
 // - [JavaScript Loops](https://www.w3schools.com/js/js_loop_for.asp)
 
 // ## Part 7: Integration
-main()
+// main()
 // ### Task
 // Combine all the functions you've created into a cohesive ATM simulation program.
 
