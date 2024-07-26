@@ -7,9 +7,11 @@
 
 // ### Task
 // Initialize the necessary variables for the ATM simulation.
-let accountBalance = 1000
-let isPinUserChoice = 1234
-let maximumWithdrawal = 1000
+let accountBalance = 1000000
+let isPinUserChoice = 1707
+let maximumWithdrawal = 100000
+let transactions = [];
+let dailyLimit = 10000
 // ### Requirements
 // - Create variables for account balance, PIN code, and maximum withdrawal limit.
 // - Use appropriate variable types (let/const) based on whether the values will change.
@@ -75,16 +77,20 @@ console.log(`Account balance: ${accountBalance.toLocaleString()} ₪`);
 // ### Task
 // Create a function to handle withdrawals from the account.
 function accountWithdrawal() {
-    let isUserWantWithdraw = prompt('Would you like to withdraw? (yes/no)');
+    let isUserWantWithdraw = prompt('Are you sure you would like to withdraw? (yes/no)');
+    isUserWantWithdraw = isUserWantWithdraw.trim().toLowerCase();
 
     if (isUserWantWithdraw === 'yes') {
         let isUserWithdrawAmount = prompt('How much would you like to withdraw?:');
         isUserWithdrawAmount = Number(isUserWithdrawAmount);
 
-        if (!isNaN(isUserWithdrawAmount) && isUserWithdrawAmount <= accountBalance && isUserWithdrawAmount <= maximumWithdrawal) {
-            console.log(`Successfully withdrawal of: ${isUserWithdrawAmount}`);
+        if (!isNaN(isUserWithdrawAmount) && isUserWithdrawAmount <= accountBalance && isUserWithdrawAmount <= maximumWithdrawal && isUserWithdrawAmount <= dailyLimit) {
+            console.log(`Successfully withdrew: ${isUserWithdrawAmount}`);
             accountBalance -= isUserWithdrawAmount;
+            dailyLimit -= isUserWithdrawAmount
+            transactions.push("-" + isUserWithdrawAmount);
             console.log(`Account balance: ${accountBalance}`);
+            console.log(`Daily limit left: ${dailyLimit}`);
             return true; 
         } else {
             console.log("Can't process withdrawal request. The amount is invalid or exceeds limits.");
@@ -97,6 +103,8 @@ function accountWithdrawal() {
         return false;
     }
 }
+
+
 // ### Requirements
 // - The function should take the withdrawal amount as an argument.
 // - It should check if the withdrawal is valid (sufficient balance and within maximum limit).
@@ -117,7 +125,7 @@ function accountWithdrawal() {
 // ### Task
 // Implement a function to handle deposits to the account.
 function depositAccount() {
-let isUserWantDeposit = prompt('Would you like to deposit? (yes/no)');
+let isUserWantDeposit = prompt('Are you sure you would like to deposit? (yes/no)');
 
 if (isUserWantDeposit === 'yes') {
     let depositAmount = prompt('How much would you like to deposit?:');
@@ -125,6 +133,7 @@ if (isUserWantDeposit === 'yes') {
 
     console.log(`Successfully deposit of: ${depositAmount}`);
     accountBalance += depositAmount;
+    transactions.push("+" + depositAmount);
     console.log(`Account balance: ${accountBalance}`);
     return true;
 }
@@ -203,12 +212,24 @@ function againATM() {
 // ### Task
 // Combine all the functions you've created into a cohesive ATM simulation program.
 function main() {
-    
-    verifyUserPIN()
-    display()
-    accountWithdrawal()
-    depositAccount()
-    againATM()
+    let attemptsPIN = 0
+    const maxAttempts = 3
+
+    while (attemptsPIN < maxAttempts) {
+        if (verifyUserPIN() === true) {
+            console.log('Access granted.')
+            display()
+            accountWithdrawal()
+            depositAccount()
+            againATM()
+            historyTransactions()
+            return
+        } 
+        attemptsPIN += 1
+        console.log(`Attempt ${attemptsPIN} of ${maxAttempts}`)
+    }
+
+    console.log('Failed PIN verification after 3 attempts. Access denied.')
 }
 main()
 // ### Requirements
@@ -225,8 +246,14 @@ main()
 
 // ## Bonus Challenges
 // 1. Implement a feature to track failed PIN attempts and lock the account after 3 fails.
-// 2. Add a feature to display the last 5 transactions.
+// 2. Add a feature to display the last 5 transactions. 
 // 3. Implement a daily withdrawal limit in addition to the per-transaction limit.
+function historyTransactions() {
+    console.log(`Recent transactions:${transactions}`);
+    if (transactions > 5) {
+        transactions = transactions.pop()
+    }
+}
 
 // ## Final Steps
 // - Test your ATM simulation thoroughly.
