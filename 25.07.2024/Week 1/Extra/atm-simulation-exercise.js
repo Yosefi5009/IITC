@@ -7,11 +7,9 @@
 
 // ### Task
 // Initialize the necessary variables for the ATM simulation.
-let accountBalance = 1000000
-let isPinUserChoice = 1707
-let maximumWithdrawal = 100000
-let transactions = [];
-let dailyLimit = 10000
+let accountBalance = 1000
+let isPinUserChoice;
+let withdrawalAmount = 1000
 // ### Requirements
 // - Create variables for account balance, PIN code, and maximum withdrawal limit.
 // - Use appropriate variable types (let/const) based on whether the values will change.
@@ -27,20 +25,18 @@ let dailyLimit = 10000
 // ## Part 2: PIN Verification
 // ### Task
 // Create a function to verify the user's PIN.
-function verifyUserPIN() {
-    let checkPIN = prompt('What is your security PIN?:')
-    checkPIN = Number(checkPIN)
+function PIN_Verification() {
+        if (isPinUserChoice !== null && isPinUserChoice.trim() !== '' && !isNaN(isPinUserChoice) && isPinUserChoice >= 4) {
+            console.log(`Your PIN has been changed to:${isPinUserChoice}`);
+            return true
 
-if (checkPIN === isPinUserChoice) {
-    console.log(`PIN is correct.`);
-    return true
+            
+        } else {
+            console.log('Invalid input. Please enter numbers only.');
+            return false
 
-} else {
-    console.log(`PIN is not correct.`);
-    return false
-} 
-
-}
+        }
+    }
 // ### Requirements
 // - The function should take an entered PIN as an argument.
 // - It should return a boolean indicating whether the PIN is correct.
@@ -73,38 +69,21 @@ console.log(`Account balance: ${accountBalance.toLocaleString()} ₪`);
 // - [JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
 
 // ## Part 4: Withdrawal Function
-
+let isUserWithdrawal;
 // ### Task
 // Create a function to handle withdrawals from the account.
-function accountWithdrawal() {
-    let isUserWantWithdraw = prompt('Are you sure you would like to withdraw? (yes/no)');
-    isUserWantWithdraw = isUserWantWithdraw.trim().toLowerCase();
-
-    if (isUserWantWithdraw === 'yes') {
-        let isUserWithdrawAmount = prompt('How much would you like to withdraw?:');
-        isUserWithdrawAmount = Number(isUserWithdrawAmount);
-
-        if (!isNaN(isUserWithdrawAmount) && isUserWithdrawAmount <= accountBalance && isUserWithdrawAmount <= maximumWithdrawal && isUserWithdrawAmount <= dailyLimit) {
-            console.log(`Successfully withdrew: ${isUserWithdrawAmount}`);
-            accountBalance -= isUserWithdrawAmount;
-            dailyLimit -= isUserWithdrawAmount
-            transactions.push("-" + isUserWithdrawAmount);
-            console.log(`Account balance: ${accountBalance}`);
-            console.log(`Daily limit left: ${dailyLimit}`);
-            return true; 
-        } else {
-            console.log("Can't process withdrawal request. The amount is invalid or exceeds limits.");
-            return false;
-        }
-    } else if (isUserWantWithdraw === 'no') {
-        return false;
+function withdrawal() {
+    if (isUserWithdrawal !== null && isUserWithdrawal.trim() !== '' && !isNaN(isUserWithdrawal) && isUserWithdrawal > 0 && isUserWithdrawal <= accountBalance) {
+        confirmWithdraw = isUserWithdrawal
+        accountBalance -= confirmWithdraw
+        console.log(`You have successfully withdraw: ${confirmWithdraw} ₪.\ncurrent balance is: ${accountBalance} ₪.`);
+        return true
+        
     } else {
-        console.log("Invalid input. Please enter 'yes' or 'no'.");
-        return false;
+        console.log(`You can't withdraw amount of: ${isUserWithdrawal} ₪, please try again.`);
+        return false
     }
 }
-
-
 // ### Requirements
 // - The function should take the withdrawal amount as an argument.
 // - It should check if the withdrawal is valid (sufficient balance and within maximum limit).
@@ -124,22 +103,16 @@ function accountWithdrawal() {
 
 // ### Task
 // Implement a function to handle deposits to the account.
-function depositAccount() {
-let isUserWantDeposit = prompt('Are you sure you would like to deposit? (yes/no)');
+let confirmDeposit;
 
-if (isUserWantDeposit === 'yes') {
-    let depositAmount = prompt('How much would you like to deposit?:');
-    depositAmount = Number(depositAmount);
-
-    console.log(`Successfully deposit of: ${depositAmount}`);
-    accountBalance += depositAmount;
-    transactions.push("+" + depositAmount);
-    console.log(`Account balance: ${accountBalance}`);
-    return true;
-}
-    else (isUserWantDeposit === 'no')
-    console.log(`Bye Bye`);
-        return false
+function deposit() {
+    if (isUserDeposit !== null && isUserDeposit.trim() !== '' && !isNaN(isUserDeposit) && isUserDeposit > 0) {
+        confirmDeposit = Number(isUserDeposit)
+        accountBalance += confirmDeposit
+        console.log(`You have successfully deposit: ${confirmDeposit} ₪.\ncurrent balance is: ${accountBalance} ₪.`);
+        return true
+    }
+    else (console.log("You can't deposit below 0 or negative amount.")) 
 }
 // ### Requirements
 // - The function should take the deposit amount as an argument.
@@ -156,42 +129,47 @@ if (isUserWantDeposit === 'yes') {
 // ## Part 6: Main ATM Logic
 // ### Task
 // Create the main function that simulates the ATM's operation.
-function simulation() {
-    verifyUserPIN()
-    display()
-    accountWithdrawal()
-    depositAccount()
+function isVisitAtmAgain() {
+    while (true) {
+let isRunAgain = prompt("Would you like to visit again the ATM (type `yes` or `no`):")
+if (isRunAgain.toLowerCase() === 'yes')
+    return true
+else if (isRunAgain.toLowerCase() === 'no') 
+return false
+
+else {
+    console.log("Invaild answer, please type 'yes or 'no.");
 }
-
-
-//Function to visit again the ATM
-function againATM() {
-    let isUserAgainATM = prompt('Would you like to perform another transaction or check balance? (yes/no):');
-    isUserAgainATM = isUserAgainATM.trim().toLowerCase();
-
-    if (isUserAgainATM === 'yes') {
-        if (verifyUserPIN()) {
-            let chooseOptions = prompt("Please choose an option:\n1. Check Balance\n2. Withdraw\n3. Deposit\nEnter the number of your choice:");
-            chooseOptions = chooseOptions.trim();
-            
-            if (chooseOptions === '1') {
-                display();
-            } else if (chooseOptions === '2') {
-                accountWithdrawal();
-            } else if (chooseOptions === '3') {
-                depositAccount();
-            } else {
-                console.log('Invalid choice. Please enter 1, 2, or 3.');
-            }
-        }
-    } else if (isUserAgainATM === 'no') {
-        console.log('Thank you for using the ATM. Goodbye!');
-        return false;
-    } else {
-        console.log('Invalid input. Please provide either `yes` or `no`.');
-        return null;
     }
 }
+
+function main() {
+    while (true) {
+        isPinUserChoice = prompt("Choose a PIN, must be numbers only.");
+        if (PIN_Verification(isPinUserChoice) === true) {
+            display();
+            break;
+        }
+
+    }
+    while (true) {
+    isUserWithdrawal = prompt("How much would you like to withraw?: ")
+    if (withdrawal(isUserWithdrawal) === true )
+        break; {
+    }
+}
+    while (true) {
+    isUserDeposit = prompt("How much would you like to deposit?")
+    if (deposit() === true) {
+        break;
+    }
+}
+    if (isVisitAtmAgain() === true)
+        main()
+
+    else console.log("Bye bye...");
+    }
+
 // ### Requirements
 // - The function should prompt the user for their PIN.
 // - If the PIN is correct, it should present options (check balance, withdraw, deposit).
@@ -209,29 +187,10 @@ function againATM() {
 // - [JavaScript Loops](https://www.w3schools.com/js/js_loop_for.asp)
 
 // ## Part 7: Integration
+// main()
 // ### Task
 // Combine all the functions you've created into a cohesive ATM simulation program.
-function main() {
-    let attemptsPIN = 0
-    const maxAttempts = 3
 
-    while (attemptsPIN < maxAttempts) {
-        if (verifyUserPIN() === true) {
-            console.log('Access granted.')
-            display()
-            accountWithdrawal()
-            depositAccount()
-            againATM()
-            historyTransactions()
-            return
-        } 
-        attemptsPIN += 1
-        console.log(`Attempt ${attemptsPIN} of ${maxAttempts}`)
-    }
-
-    console.log('Failed PIN verification after 3 attempts. Access denied.')
-}
-main()
 // ### Requirements
 // - Ensure all parts work together seamlessly.
 // - The program should run without errors and handle various scenarios gracefully.
@@ -246,14 +205,8 @@ main()
 
 // ## Bonus Challenges
 // 1. Implement a feature to track failed PIN attempts and lock the account after 3 fails.
-// 2. Add a feature to display the last 5 transactions. 
+// 2. Add a feature to display the last 5 transactions.
 // 3. Implement a daily withdrawal limit in addition to the per-transaction limit.
-function historyTransactions() {
-    console.log(`Recent transactions:${transactions}`);
-    if (transactions > 5) {
-        transactions = transactions.pop()
-    }
-}
 
 // ## Final Steps
 // - Test your ATM simulation thoroughly.
