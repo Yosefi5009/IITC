@@ -10,13 +10,12 @@
 // ## Exercise 1: Variables and Basic Input
 
 // Goal: Collect user's weight and height using prompts and display them in the console.
-function askParameters() {
 let height = prompt('What is your height?, write in CM only.')
 height = parseFloat(height)
 
 let weight = prompt('What is your weight?, write in KG only.')
 weight = parseFloat(weight)
-}
+
 // Hints:
 // - Use `prompt()` to ask for input
 // - Store the inputs in variables
@@ -29,11 +28,10 @@ weight = parseFloat(weight)
 // ## Exercise 2: Basic Calculation
 
 // Goal: Calculate the BMI using the formula: BMI = weight (kg) / (height (m) * height (m))
-function calculateBMI() {
 let isBMI = weight / (height * height)
 isBMI = Math.floor(isBMI * 10000)
 console.log(`BMI is: ${isBMI}.`);
-}
+
 
 // Hints:
 // - Convert string inputs to numbers using `parseFloat()`
@@ -47,16 +45,13 @@ console.log(`BMI is: ${isBMI}.`);
 // ## Exercise 3: Conditional Statements
 
 // Goal: Categorize the BMI result and display an appropriate message.
-function displayResult() {
 if (isBMI < 18.5) {
     console.log(`You are underweight.`);
-} else if (isBMI >= 18.5 && isBMI <= 24.9)
+  }  else if (isBMI >= 18.5 && isBMI <= 24.9)
     console.log(`Normal weight`);
   else if (isBMI >= 25 && isBMI <= 29.9)
     console.log(`Overweight`);
-  else if (isBMI > 30)
-    console.log(`Obese`);
-}
+  else console.log(`Obese`);
 
 // Hints:
 // - Use `if`, `else if`, and `else` statements
