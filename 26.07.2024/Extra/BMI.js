@@ -10,12 +10,6 @@
 // ## Exercise 1: Variables and Basic Input
 
 // Goal: Collect user's weight and height using prompts and display them in the console.
-let height = prompt('What is your height?, write in CM only.')
-let userHeight = parseFloat(height)
-
-let weight = prompt('What is your weight?, write in KG only.')
-let userWeight = parseFloat(weight)
-console.log(`Height: ${userHeight} CM\nWeight: ${userWeight} KG`);
 
 // Hints:
 // - Use `prompt()` to ask for input
@@ -29,9 +23,7 @@ console.log(`Height: ${userHeight} CM\nWeight: ${userWeight} KG`);
 // ## Exercise 2: Basic Calculation
 
 // Goal: Calculate the BMI using the formula: BMI = weight (kg) / (height (m) * height (m))
-let formulaBMI = weight / (height * height)
-formulaBMI = Math.floor(formulaBMI * 10000)
-console.log(`BMI: ${formulaBMI}`);
+
 
 
 // Hints:
