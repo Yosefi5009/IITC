@@ -263,3 +263,4 @@ function historyTransactions() {
 // Remember to apply the concepts of variables, arithmetic operations, logical operators, comparison operators, and assignment operators throughout your solution. Good luck!
 
 // [JavaScript Tutorial](https://www.w3schools.com/js/default.asp)
+// Finish atm-simulation-exercise.js
