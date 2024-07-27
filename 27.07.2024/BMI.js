@@ -11,9 +11,11 @@
 
 // Goal: Collect user's weight and height using prompts and display them in the console.
 let isUserHeight = prompt('What is your height, in CM?')
-let isUserWeight = prompt('What is your weight?, in KG')
-console.log(`Weight: ${isUserWeight}\nHeight: ${isUserHeight}`);
+isUserHeight = parseInt(isUserHeight)
 
+
+let isUserWeight = prompt('What is your weight?, in KG')
+isUserWeight = parseInt(isUserWeight)
 // Hints:
 // - Use prompt() to ask for input
 // - Store the inputs in variables
@@ -51,6 +53,7 @@ console.log(`Weight: ${isUserWeight}\nHeight: ${isUserHeight}`);
 // } else if (FormulaBMI > 25 && FormulaBMI <= 29.9) {
 //     console.log(Overweight);
 // } else console.log(Obese);
+
 // Goal: Categorize the BMI result and display an appropriate message.
 
 // Hints:
