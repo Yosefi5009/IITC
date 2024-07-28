@@ -3,23 +3,59 @@
 // 1. Write a for loop that prints the numbers from 1 to 20.
 //    Hint: Use a for loop with a counter that starts at 1 and ends at 20.
 //    [Learn more about for loops](https://www.w3schools.com/js/js_loop_for.asp)
-
+let i = 0
+for (i = 0; i < 20; i++) {
+}
+console.log(i);
 // 2. Create a while loop that prints odd numbers from 1 to 15.
 //    Hint: Use a counter that increments by 2 in each iteration.
 //    [Learn more about while loops](https://www.w3schools.com/js/js_loop_while.asp)
+i = 0
+while (i < 15) {
+    if (i % 2 !== 0) {
+        console.log(i);
 
+}
+    i += 1
+}
 // 3. Use a do...while loop to ask the user for a number between 1 and 10 until they enter a valid number.
 //    Hint: Use prompt() to get user input and parseInt() to convert it to a number.
 //    [Learn more about do...while loops](https://www.w3schools.com/jsref/jsref_dowhile.asp)
+// let isUserNum;
+// do {
+//     isUserNum = parseInt(prompt(`Choose number between 1 and 10`), 10);
+//     if (isUserNum >= 1 && isUserNum <= 10) {
+//         console.log(`Number accepted: ${isUserNum}`);
+//     } else {
+//         console.log(`Invalid number. Please choose a number between 1 and 10.`);
+//     }
+// } while (isUserNum < 1 || isUserNum > 10);
+
 
 // 4. Write a for loop that calculates the sum of all numbers from 1 to 100.
 //    Hint: Initialize a sum variable to 0 and add each number in the loop.
 //    [Learn more about for loops](https://www.w3schools.com/js/js_loop_for.asp)
-
+i = 0
+sum = 0
+for(i = 0; i <= 100; i++) {
+    sum += i
+    if(i === 100) {
+        break;
+    }
+}
+console.log(sum);
 // 5. Create a while loop that prints a countdown from 10 to "Blast off!".
 //    Hint: Start with a counter at 10 and decrement it in each iteration.
 //    [Learn more about while loops](https://www.w3schools.com/js/js_loop_while.asp)
-
+i = 10
+while (i !== 0) {
+    i -= 1
+    console.log(i);
+    if (i === 0) {
+  
+    }
+}
+console.log(`Blast off!`);
 // 6. Use a for loop to print the first 10 numbers in the Fibonacci sequence.
 //    Hint: Start with two variables for the first two numbers, then calculate the next.
 //    [Learn more about for loops](https://www.w3schools.com/js/js_loop_for.asp)
@@ -27,15 +63,32 @@
 // 7. Write a do...while loop that generates random numbers between 1 and 6 (simulating a die roll) until it rolls a 3.
 //    Hint: Use Math.random() and Math.floor() to generate random integers.
 //    [Learn more about do...while loops](https://www.w3schools.com/jsref/jsref_dowhile.asp)
+let dice;
 
+do {
+    dice = Math.floor(Math.random() * 6) + 1;
+} while (dice !== 6);
+console.log(`Dice got the result:`,dice);
 // 8. Create a for loop that prints the multiplication table for the number 7 (up to 10).
 //    Hint: Use the loop counter as one factor and 7 as the other.
 //    [Learn more about for loops](https://www.w3schools.com/js/js_loop_for.asp)
-
+i = 7
+sum = 0
+for (i = 7; i < 10; i++) {
+    sum += i * i
+    console.log(sum);
+}
 // 9. Use a while loop to find the first number greater than 1000 that is divisible by both 3 and 7.
 //    Hint: Start at 1001 and use the modulus operator (%) to check divisibility.
 //    [Learn more about while loops](https://www.w3schools.com/js/js_loop_while.asp)
-
+i = 1001
+while (true) {
+    if (i % 3 === 0 && i % 7 === 0) {
+        console.log(i);
+        break;
+    }
+    i++;
+}
 // 10. Write a for loop that calculates the factorial of a given number.
 //     Hint: Start with a result of 1 and multiply by each number up to the given number.
 //     [Learn more about for loops](https://www.w3schools.com/js/js_loop_for.asp)
@@ -43,6 +96,22 @@
 // 11. Create a do...while loop that asks the user to guess a secret number between 1 and 20, giving "higher" or "lower" hints.
 //     Hint: Generate a random number at the start and compare it with the user's guess.
 //     [Learn more about do...while loops](https://www.w3schools.com/jsref/jsref_dowhile.asp)
+// let guessNum = prompt(`Guess a number between 1-20`);
+// let secretNum = 10;
+
+// do {
+//     guessNum = parseInt(guessNum);
+
+//     if (guessNum > secretNum) {
+//         console.log(`Lower...`);
+//         guessNum = prompt(`Guess a number between 1-20`);
+//     } else if (guessNum < secretNum) {
+//         console.log(`Higher...`);
+//         guessNum = prompt(`Guess a number between 1-20`);
+//     } else {
+//         console.log(`Correct`);
+//     }
+// } while (guessNum !== secretNum);
 
 // 12. Use a for loop to check if a given number is prime.
 //     Hint: Check if the number is divisible by any integer from 2 to its square root.
@@ -62,7 +131,6 @@
 //     ```
 //     Hint: Use nested loops - one for rows and one for columns.
 //     [Learn more about nested loops](https://www.w3schools.com/js/js_loop_for.asp)
-
 // 15. Use a do...while loop to implement a simple calculator that performs operations until the user chooses to exit.
 //     Hint: Use prompt() to get user input for numbers and operations.
 //     [Learn more about do...while loops](https://www.w3schools.com/jsref/jsref_dowhile.asp)
