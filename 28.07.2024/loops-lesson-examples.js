@@ -67,11 +67,37 @@ console.log(`While loop ex3: ${i}`);
 
 //While loop Exercise 4.
 let password = `Enter`
-let guessPass = prompt(`What is the password?:`)
+// let guessPass = prompt(`What is the password?:`)
 
-while (guessPass !== password) {
-    console.log(`Try again`);
-    guessPass =prompt(`What is the password?:`)
-}
-console.log(`Correct`);
+// while (guessPass !== password) {
+//     console.log(`Try again`);
+//     guessPass =prompt(`What is the password?:`)
+// }
+// console.log(`Correct`);
 
+//do while loops examples:
+
+//Do While Exercise 1.
+let number = 0;
+
+do {
+    number += 1
+    console.log(number);
+} while (number < 5)
+
+//Do While Exercise 2.
+// let playAgain = prompt(`Want to play again?`)
+
+// do {
+//     playAgain = prompt(`Want to play again?`)
+//     console.log(playAgain)
+// } while (playAgain === `yes`)
+
+//Do While Exercise 3.
+let Dice = Math.floor(Math.random() * (7 - 1 + 1))
+
+do {
+    Dice = Math.floor(Math.random() * (7 - 1 + 1))
+
+} while (Dice !== 6)
+console.log(`Boomed you got the dice number: ${Dice}`)
