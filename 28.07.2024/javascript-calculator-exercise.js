@@ -7,7 +7,29 @@
 
 // ### Task
 // Create functions for basic arithmetic operations.
+let a;
+let b;
 
+function Addition(a,b) {
+    a = a + b
+    return console.log(a);
+}
+
+function subtraction(a,b) {
+    a = a - b
+    return console.log(a);
+}
+
+function multiplication(a,b) {
+    a = a * b
+    return console.log(a);
+}
+
+
+function divide(a,b) {
+    a = a / b
+    return console.log(a);
+}
 // ### Requirements
 // - Create separate functions for addition, subtraction, multiplication, and division.
 // - Each function should take two parameters and return the result of the operation.
@@ -21,6 +43,25 @@
 // - [JavaScript Arithmetic](https://www.w3schools.com/js/js_arithmetic.asp)
 
 // ## Part 2: Advanced Math Functions
+function powerOfNumber(a,b) {
+    a = a ** b
+    return console.log(a);
+}
+
+function squareRootNum(a) {
+    a = Math.sqrt(a)
+    return console.log(a);
+}
+
+function absoluteNumberValue(a,b) {
+    let positive = a
+    let negative = b
+
+    positive = Math.abs(a)
+    negative = Math.abs(b)
+
+    return console.log(a,b);
+}
 
 // ### Task
 // Create functions for more advanced mathematical operations.
@@ -39,7 +80,40 @@
 // - [JavaScript Math Object](https://www.w3schools.com/js/js_math.asp)
 
 // ## Part 3: Operation Selection
+function isUserInput(a, b) {
+    let isUserArithmetic = prompt(`Type the number of the function you would like to use:\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Divide\n5. Power of Number\n6. Square Root Number\n7. Absolute Number Value`);
 
+    while (isNaN(isUserArithmetic) || isUserArithmetic < 1 || isUserArithmetic >= 7) {
+        isUserArithmetic = prompt(`Please enter a valid number between 1 and 7:\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Divide\n5. Power of Number\n6. Square Root Number\n7. Absolute Number Value`);
+    }
+
+    isUserArithmetic = parseInt(isUserArithmetic);
+
+    a = parseFloat(prompt(`Provide the first number:`));
+    b = parseFloat(prompt(`Provide the second number:`));
+
+    while (isNaN(a) || isNaN(b)) {
+        a = parseFloat(prompt(`Please provide a valid first number:`));
+        b = parseFloat(prompt(`Please provide a valid second number:`));
+    }
+
+    if (isUserArithmetic === 1) {
+        Addition(a, b);
+    } else if (isUserArithmetic === 2) {
+        subtraction(a, b);
+    } else if (isUserArithmetic === 3) {
+        multiplication(a, b);
+    } else if (isUserArithmetic === 4) {
+        divide(a, b);
+    } else if (isUserArithmetic === 5) {
+        powerOfNumber(a, b);
+    } else if (isUserArithmetic === 6) {
+        squareRootNum(a);
+    } else if (isUserArithmetic === 7) {
+        absoluteNumberValue(a);
+    }
+}
+isUserInput(a,b)
 // ### Task
 // Create a function that selects which operation to perform based on user input.
 
