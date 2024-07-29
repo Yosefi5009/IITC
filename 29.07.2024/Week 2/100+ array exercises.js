@@ -183,7 +183,11 @@ let lastIndex = duplicateArray.lastIndexOf(`ABC`)
 console.log(`first index is at:`,firstIndex, `and second index is at:`,lastIndex);
 // 35. Use `indexOf()` to check if an array contains a specific value, and print a boolean result.
 //     Hint: Compare the result of `indexOf()` to -1.
-
+duplicateArray = [`ABC`,`abc`,`ABC`]
+firstIndex = duplicateArray.indexOf(`ABC`)
+if (firstIndex === length -1) {
+    console.log(`exercise 35: this is true`);
+} else console.log(`exercise 35: this is false`);
 // ## Array Methods: includes()
 // [W3Schools Array includes()](https://www.w3schools.com/jsref/jsref_includes_array.asp)
 
@@ -293,55 +297,133 @@ console.log(numbers);
 
 // 56. Convert `fruits` into a comma-separated string using `join()`.
 //     Hint: Default separator for `join()` is a comma.
-
+fruits = fruits.join(`,`)
+console.log(`this is seperated by comma:`,fruits);
 // 57. Join elements of `numbers` with a dash between them.
 //     Hint: Pass the desired separator as an argument to `join()`.
-
+numbers = [1, 2, 3, 4, 5, 6];
+numbers = numbers.join('-');
+console.log(numbers);
 // 58. Create a function that takes an array and a separator, then returns the joined string.
 //     Hint: Use the separator parameter in the `join()` method.
+let chosenString;
+fruits = [`apple`,`melon`,`watermelon`,`peach`]
 
+function separatorFruits() {
+    chosenString = '.'
+    fruits = fruits.join(chosenString)
+    console.log(fruits);
+}
+separatorFruits()
 // 59. Join array elements with an empty string to create a single word.
 //     Hint: Pass an empty string as the separator.
-
+fruits = [`apple`,`melon`,`watermelon`,`peach`]
+fruits = fruits.join(``)
+console.log(fruits);
 // 60. Use `join()` and `split()` to reverse the order of words in a sentence.
 //     Hint: Split the sentence into words, reverse the array, then join.
-
+let sentence = `Java script`
+sentence = sentence.split(``)
+sentence = sentence.reverse()
+sentence = sentence.join(`+`)
+console.log(sentence);
 // ## Array Methods: reverse()
 // [W3Schools Array reverse()](https://www.w3schools.com/jsref/jsref_reverse.asp)
 
 // 61. Reverse the order of elements in `seasons`.
 //     Hint: `reverse()` modifies the original array.
-
+seasons = seasons.reverse()
+console.log(`this is reversed`,seasons);
 // 62. Create a function to check if a word is a palindrome using `split()`, `reverse()`, and `join()`.
 //     Hint: Compare the original word with its reversed version.
-
+let testWord;
+let testWordAfterChanges;
+function palindrome() {
+    testWord = `A man`
+    console.log(`Comparing this type A:`,testWord);
+    testWordAfterChanges = testWord.split().reverse().join(" ")
+    console.log(`to this type B:`,testWordAfterChanges);
+    if (testWord === testWordAfterChanges) {
+        console.log(`This is matching`);
+    } else console.log(`This is'nt matching.`);
+}
+palindrome()
 // 63. Reverse `numbers` and then map each element to its square.
 //     Hint: Chain `reverse()` and `map()` methods.
+numbers = [1, 2, 3, 4, 5, 6];
+numbers = numbers.reverse().map(function(num) {
+    return num * 2;
+});
+console.log(numbers);
 
 // 64. Use `reverse()` to reverse the order of characters in a string (Hint: use `split()` first).
 //     Hint: Convert the string to an array, reverse it, then join back to a string.
-
+let hats = 'nike, adidas, jordan, diadora';
+console.log(hats);
+hats = hats.split('');
+hats.reverse();
+hats = hats.join('');
+console.log(hats); 
 // 65. Implement a function that reverses an array without using the `reverse()` method.
 //     Hint: Use a loop to swap elements from the start and end of the array.
-
+let animals = ['cat', 'dog', 'elephant', 'lion', 'tiger'];
+let newAnimals = []
+i;
+function reverseArray() {
+    for (i = animals.length; i > 0; i--) {
+        newAnimals = newAnimals.concat(animals[i])
+        console.log(`this is a new array:`,newAnimals);
+    }  
+}
+reverseArray()
 // ## Array Methods: sort()
 // [W3Schools Array sort()](https://www.w3schools.com/jsref/jsref_sort.asp)
 
 // 66. Sort the `fruits` array in alphabetical order.
 //     Hint: Default `sort()` works alphabetically for strings.
+fruits = [`apple`,`orange juice`,`cherry`,`grapes`,`watermelon`,`strawberry`]
+fruits.sort()
+console.log(fruits);
 
 // 67. Sort `numbers` in ascending order.
 //     Hint: Use a compare function for numerical sort.
-numbers.sort()
-console.log(numbers)
+numbers = [1,100,2,0,1,3,42,29,10,9,38]
+numbers.sort(function(a, b){return a-b});
+console.log(numbers);
+
 // 68. Sort `numbers` in descending order.
 //     Hint: Modify the compare function to sort in reverse order.
+numbers = [1,100,2,0,1,3,42,29,10,9,38]
+numbers.sort(function(a, b){return a-b});
+numbers.reverse()
+console.log(numbers);
 
 // 69. Create an array of words and sort them by length.
 //     Hint: Use a compare function that compares string lengths.
-
+let cities = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'];
+cities.sort(function(a, b) {
+    return a.length - b.length;
+});
+console.log(cities); 
+for (let i = 0; i < cities.length; i++) {
+    console.log(`The length of ${cities[i]}: ${cities[i].length}`);
+}
 // 70. Implement a custom sort to order an array of numbers based on their remainder when divided by 3.
 //     Hint: Use the modulo operator (%) in the compare function.
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers.sort(function(a, b) {
+  return a - b;
+});
+console.log(numbers); 
+let NewNumbers = [];
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] % 3 === 0) {
+    NewNumbers.push(numbers[i]);
+    console.log(`This num is with 0 reminder:`,numbers[i]);
+  }
+}
+console.log(NewNumbers); 
 
 // SKIP IT:
 // ## Array Iteration: forEach()
@@ -349,18 +431,49 @@ console.log(numbers)
 
 // 71. Use `forEach()` to print each element in `colors`.
 //     Hint: The callback function in `forEach()` receives each element as an argument.
-
+colors.forEach(function(color) {
+    console.log(color);
+  });
 // 72. Double each number in `numbers` using `forEach()`.
 //     Hint: Modify the original array within the `forEach()` callback.
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+numbers.forEach(function(number, index) {
+    numbers[index] = number * 2;
+});
+console.log(numbers); 
 
 // 73. Use `forEach()` to create an HTML list from an array of strings.
 //     Hint: Concatenate HTML tags within the `forEach()` callback.
+let listHtml = ['h2', 'h1', 'script', 'header'];
+let RemoveTheH = 'h'; // The string you want to remove
+let list2Html = [];
+
+listHtml.forEach(function(word) {
+    let updatedWord = word.replace(RemoveTheH, '');
+    list2Html.push(updatedWord);
+});
+console.log(list2Html);
 
 // 74. Implement a simple search function using `forEach()`.
 //     Hint: Use a condition inside the `forEach()` callback to find matching elements.
-
+let foodList = ["Pizza", "Burger", "Pasta", "Sushi", "Salad", "Tacos", "Ice Cream"];
+foodList.forEach(function(food){
+    if (food.includes(`Pizza`) ) {
+        console.log(`There is Pizza`);
+    } else {}
+})
 // 75. Use `forEach()` to count how many elements in an array meet a certain condition.
 //     Hint: Increment a counter variable in the `forEach()` callback when the condition is met.
+foodList = ["Pizza", "Burger", "Pasta", "Sushi", "Salad", "Tacos", "Ice Cream"];
+let aCount = 0;  // Initialize aCount
+
+foodList.forEach(function(food) {
+    if (food.includes('a')) {
+        aCount += 1;  // Increment aCount by 1
+        console.log(`"a" found from: ${food}`);
+    }
+});
+console.log(`Total "a" count: ${aCount}`);
 
 // SKIP IT:
 // ## Array Iteration: map()
@@ -368,15 +481,33 @@ console.log(numbers)
 
 // 76. Use `map()` to create a new array with the lengths of each string in `fruits`.
 //     Hint: Return the length of each string in the `map()` callback.
+console.log(`this is exercise 70:`,fruits);
+let lengthFruits = []
+lengthFruits = fruits.map(function(fruit) {
+    fruit = fruit.length
+    lengthFruits.push(fruit)
+    return fruit
+})
+console.log(lengthFruits);
 
 // 77. Square all numbers in `numbers` using `map()`.
 //     Hint: Return the square of each number in the `map()` callback.
+numbers = [10, 25, 37, 42, 58];
+console.log(`this is exercise 71:`,numbers);
+let squareNum = []
+squareNum = numbers.map(function(num){
+    num = num * num
+    squareNum.push(num)
+    return num
 
+})
+console.log(squareNum);
 // 78. Create a new array where each element is a boolean indicating if the original element is even.
 //     Hint: Use the modulo operator (%) to check for even numbers.
 
 // 79. Use `map()` to format an array of names into a new array of greetings.
 //     Hint: Return a greeting string that includes the name in the `map()` callback.
+let names = ["Alice", "Bob", "Charlie", "Diana", "Ethan"];
 
 // 80. Implement a function that uses `map()` to convert an array of Celsius temperatures to Fahrenheit.
 //     Hint: Use the formula (C * 9/5) + 32 in the `map()` callback.
