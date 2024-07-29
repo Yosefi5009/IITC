@@ -14,6 +14,9 @@
 // ### Requirements
 // - Create variables for the player's name, score, and health.
 // - Initialize a variable to store the player's current room.
+let playerName;
+let score;
+let health;
 
 // ### Hints
 // - Use `let` for variables that might change during the game.
@@ -26,7 +29,13 @@
 
 // ### Task
 // Create a function to set up the player's information.
-
+function playerInfo() {
+    playerName = prompt(`What is your name?:`)
+    score = 0
+    health = 100
+    console.log(`Name:${playerName}\nStart score: ${score}\nStart Health: ${health}`);
+}
+playerInfo();
 // ### Requirements
 // - The function should prompt the user for their name.
 // - It should set the initial score to 0 and health to 100.
@@ -43,7 +52,19 @@
 
 // ### Task
 // Create functions for different choices the player can make.
-
+let questionFirst;
+function hauntedLibrary() {
+    console.log(`You have entered an old, dusty library filled with ancient books and an eerie silence. As you explore, you find a mysterious book on a pedestal.`);
+    questionFirst = prompt(`What would you choose?:\n1. Open the book and read the first page.\n2. Close the book and leave it untouched.`);
+    if (questionFirst === `1`) {
+        console.log(`You gain knowledge (+10 score) but lose some health (-5 health) as a ghostly figure drains some of your energy.`);
+        score += 10;
+        health -= 5;
+    } else if (questionFirst === '2') {
+        console.log(`You avoid the ghostly figure but miss out on valuable information (+5 score, no health change).`);
+        score += 5;
+    }
+}
 // ### Requirements
 // - Create at least three functions representing different rooms or scenarios.
 // - Each function should present a choice to the player and update their score or health based on their decision.
