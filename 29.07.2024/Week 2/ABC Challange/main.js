@@ -1,8 +1,8 @@
 // Your Code Goes Here:
-let alphabet = [];
+let aToZ = [];
 let j;
 for (let i = 65; i <= 90; i++) {
     j = String.fromCodePoint(i)
-    alphabet.push(j)
+    aToZ.push(j)
 }
-console.log(alphabet);
+console.log(aToZ);
