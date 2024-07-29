@@ -561,6 +561,9 @@ console.log(`exercise 82: fruits with 5 letters :`,fruitsLengthFive);
 
 // 86. Use `find()` to get the first element in `numbers` that's greater than 3.
 //     Hint: Return true in the callback when the condition is met.
+numbers = [1,2,1,2,8];
+let greaterThree = numbers.find(numbers => numbers > 3);
+console.log(greaterThree);
 
 // 87. Find the index of the first color in `colors` that starts with the letter 'b'.
 //     Hint: Use `startsWith()` method in the `findIndex()` callback.
