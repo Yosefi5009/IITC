@@ -1,8 +1,13 @@
 // Your Code Goes Here:
-let aToZ = [];
-let j;
-for (let i = 65; i <= 90; i++) {
-    j = String.fromCodePoint(i)
-    aToZ.push(j)
+let azLetters = [];
+let maxLetter = 90
+let minLetter = 64
+let i;
+
+while (minLetter < maxLetter) { 
+    minLetter++
+    i = String.fromCharCode(minLetter)
+    azLetters.push(i)
+
 }
-console.log(aToZ);
+console.log(azLetters);
