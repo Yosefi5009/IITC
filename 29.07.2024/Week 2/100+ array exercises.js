@@ -508,7 +508,14 @@ console.log(squareNum);
 // 79. Use `map()` to format an array of names into a new array of greetings.
 //     Hint: Return a greeting string that includes the name in the `map()` callback.
 let names = ["Alice", "Bob", "Charlie", "Diana", "Ethan"];
+let greeting = []
 
+greeting = names.map(function(word) {
+    word = "Hello there " + word
+    greeting.push(word)
+    return word
+})
+console.log(greeting);
 // 80. Implement a function that uses `map()` to convert an array of Celsius temperatures to Fahrenheit.
 //     Hint: Use the formula (C * 9/5) + 32 in the `map()` callback.
 
@@ -517,10 +524,25 @@ let names = ["Alice", "Bob", "Charlie", "Diana", "Ethan"];
 
 // 81. Use `filter()` to create a new array with only the even numbers from `numbers`.
 //     Hint: Use the modulo operator (%) to check for even numbers in the `filter()` callback.
+numbers = [1, 2, 3, 4, 5, 6];
+let evenNumbers = numbers.filter(function(number) {
+  return number % 2 === 0;
+});
 
+console.log(`exercise 81: the even numbers are:`,evenNumbers); 
 // 82. Filter `fruits` to only include fruits with more than 5 characters.
 //     Hint: Check the length of each string in the `filter()` callback.
+console.log(fruits);
+let fruitsLengthFive = []
 
+fruitsLengthFive = fruits.filter(function(fruit) {
+    if (fruits.length >= 5) {
+        fruitsLengthFive.push(fruit)
+        console.log(`the fruit: ${fruit} has ${fruit.length} letters`);
+        return fruit
+    }
+})
+console.log(`exercise 82: fruits with 5 letters :`,fruitsLengthFive); 
 // 83. Create a function that filters an array to only include unique values.
 //     Hint: Use `indexOf()` in the `filter()` callback to check for duplicates.
 
