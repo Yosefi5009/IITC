@@ -291,8 +291,8 @@ numbers = numbers.concat(numbers)
 console.log(numbers);
 // 55. Concatenate an array with multiple individual elements.
 //     Hint: Pass individual elements as separate arguments to `concat()`.
-let arrayMultiple = [`fruits`,0,`%#@`,`fsd`,20,50,1,0]
-arrayMultiple = arrayMultiple.concat(`dfdsfsd`,430,120,22,`hi there`)
+let arrayMultiple = [`fruits`,0,`%#@`,`hat`,20,50,1,0]
+arrayMultiple = arrayMultiple.concat(`word`,430,120,22,`hi there`)
 console.log(`This is exercise 55:`,arrayMultiple);
 // ## Array Methods: join()
 // [W3Schools Array join()](https://www.w3schools.com/jsref/jsref_join.asp)
