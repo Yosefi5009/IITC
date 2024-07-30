@@ -137,19 +137,19 @@ for (i = 1; i <= 3; i++) {
 i;
 let j = [`A`,`B`,`C`,`D`,`E`]
 
-for (i =0; i < j.length; i++) {
-    console.log(`${j[i]}`);
+for (i =0; i < row.length; i++) {
+    console.log(`${row[i]}`);
 }
 // 15. Write a for loop that prints "2" four times, separated by spaces.
 //     ```javascript
 //     // Your code here
 //     ```
 i;
-j = `2 `
+row = `2 `
 for (i = 0; i < 3; i++) {
-    j += `2 `
+    row += `2 `
 }
-console.log(j);
+console.log(row);
 
 // ## Working with Arrays
 
@@ -295,11 +295,11 @@ for (i = 0; i < 5; i++) {
 //     // Your code here
 //     ```
 pattern = '';
-j;
+row;
 i;
 for (i = 0; i < 3; i++) {
     let rowPattern = '';
-    for (j = 0; j < 3; j++) {
+    for (row = 0; row < 3; row++) {
         rowPattern += '*';
     }
     pattern += rowPattern + '\n';
@@ -326,11 +326,11 @@ for (i = 1; i < 5; i++) {
 //     // Your code here
 //     ```
 pattern = '';
-j;
+row;
 i;
 for (i = 0; i < 4; i++) {
     let rowPattern = '';
-    for (j = 0; j < 4; j++) {
+    for (row = 0; row < 4; row++) {
         rowPattern += '*';
     }
     pattern += rowPattern + '\n';
@@ -347,10 +347,10 @@ console.log(pattern);
 //     ```
 pattern = ' ' 
 i;
-j;
+row;
 for (i = 1; i <= 5; i++) {
     pattern = ` `
-    for (j = 1; j <= i; j++) {
+    for (row = 1; row <= i; row++) {
         pattern += `${i}`
     }   console.log(pattern);
 }
