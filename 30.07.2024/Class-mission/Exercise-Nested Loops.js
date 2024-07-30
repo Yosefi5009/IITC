@@ -65,12 +65,8 @@ for (i = 0; i < arr.length; i++) {
 }   for(k = 0; k < j.length; k++) {
     if (j[k] === num) {
         console.log(`Found at 3D scope: ${[i]}\nat 2D scope: ${[k]}\nThe Target Num: ${j[k]}`);
-
     }
-
 }
-
-
 // Exercise 4: Count Vowels and Consonants
 // Objective: Write a program to count the number of vowels and consonants in a given string.
 // Instructions:
@@ -82,6 +78,7 @@ for (i = 0; i < arr.length; i++) {
 // Example Output:
 // For input = "hello", output: Vowels: 2, Consonants: 3
 // For input = "world", output: Vowels: 1, Consonants: 4
+
 // Exercise 5: Reverse a String
 // Objective: Write a program that reverses a given string using nested loops.
 // Instructions:
@@ -105,6 +102,17 @@ for (i = 0; i < arr.length; i++) {
 // 1234
 // 12345
 
+let currentRow;
+let rowCount;
+let columnCount;
+
+for (rowCount = 1; rowCount <= 5; rowCount++) {
+    currentRow = ``;
+    for (columnCount = 1; columnCount <= rowCount; columnCount++) {
+        currentRow += columnCount;
+    }
+    console.log(currentRow);
+}
 
 // Exercise 7: Sum of 2D Array Elements
 // Objective: Calculate the sum of all elements in a 2D array.
@@ -114,7 +122,23 @@ for (i = 0; i < arr.length; i++) {
 // Sum all the elements and print the total.
 // Example Output:
 // For arr = [[1, 2], [3, 4], [5, 6]], output: Sum: 21
+arr = [[1, 2], [3, 4], [5, 6]]
+let sum = 0
+i;
+j;
+k;
+let p;
+for (i = 0; i < arr.length; i++) {
+    j = arr[i]
+    // console.log(j);
+    for(k = 0; k < j.length; k++) {
+        p = j[k]
+        sum += p
+        // console.log(p);
+    }
 
+}
+console.log(`Result of Exercise 7:`,sum);
 // Exercise 8: Character Frequency
 // Objective: Write a program to find the frequency of each character in a string.
 // Instructions:
