@@ -4,6 +4,14 @@
 // 1. Create an object called `playlist` with properties: name (string), songs (array of strings), and duration (number in minutes).
 // 2. Add a new song to the playlist.
 // 3. Calculate and log the average song duration (assume each song is 3 minutes long).
+ let playList = {
+    name: `Joseph Music`,
+    songs: [`Headrush`,`Fireball`,`Whats in my head`,`Paris`,`Forget It`],
+    duration: 15,
+}
+let playListKeys = Object.keys(playList)
+playList[playListKeys[1]].push(`baby`)
+console.log(playList[playListKeys[1]]);
 
 // **Hint:** Use the `length` property of the array to get the number of songs.
 
@@ -11,6 +19,47 @@
 // 1. Create an object called `bankAccount` with properties: accountNumber (string), balance (number), and isActive (boolean).
 // 2. Create a method called `deposit` that takes an amount and adds it to the balance.
 // 3. Create another method called `withdraw` that takes an amount and subtracts it from the balance, but only if the balance is sufficient.
+let isActive = true;
+
+let bankAccount = {
+    accountNumber: 58120,
+    balance: 1000000,
+    isActive: isActive,
+
+    depositMoney: function() {
+        let isAmount = prompt('How much would you like to deposit?: ');
+        this.balance += parseFloat(isAmount);
+        console.log('New balance after deposit:', this.balance);
+        return this.balance;
+    },
+    withdraw: function() {
+        let isWithdraw = parseFloat(prompt(`How much would you like to withdraw?: `));
+
+        if (isWithdraw <= this.balance) {
+            this.balance -= isWithdraw;
+            isActive = false;  
+            return this.balance;
+
+        } else {
+            while (isActive === true) {
+                console.log('Insufficient balance or didnt type a number value, please try again.');
+                isWithdraw = parseFloat(prompt('How much would you like to withdraw?: '));
+                
+                if (isWithdraw < this.balance) {
+                    this.balance -= isWithdraw;
+                    isActive = false;
+                    return this.balance;
+                }
+            }
+        }
+    } 
+};
+// console.log(bankAccount.depositMoney())
+// console.log(bankAccount.withdraw());
+// console.log(bankAccount);
+
+
+
 
 // **Hint:** Use `this` keyword inside methods to access object properties.
 
@@ -25,6 +74,43 @@
 // 1. Create an object called `student` with properties: name (string) and grades (array of numbers).
 // 2. Add a method called `calculateAverage` that returns the average of the student's grades.
 // 3. Add another method called `getLetterGrade` that returns 'A' for >=90, 'B' for >=80, 'C' for >=70, 'D' for >=60, and 'F' for <60.
+let student = {
+    name: 'Joseph',
+    grades: [90, 80, 70, 60, 55],
+
+    calculateAverage: function() {
+        sum = 0;
+        let keysObject = Object.keys(this);
+        let valuesGrades = this[keysObject[1]];
+        for (let i = 0; i < valuesGrades.length; i++) {
+            sum += valuesGrades[i];
+}           sum = sum / valuesGrades.length;
+            return sum
+
+    },
+
+    getLetterGrade: function() {
+        let average = this.calculateAverage(); // Get the average from the calculateAverage method
+        if (average >= 90) {
+            return 'A';
+        } else if (average >= 80) {
+            return 'B';
+        } else if (average >= 70) {
+            return 'C';
+        } else if (average >= 60) {
+            return 'D';
+        } else {
+            return 'F';
+        }
+    }
+};
+
+// console.log(student.calculateAverage());
+// console.log(student.getLetterGrade())
+
+
+
+
 
 // **Hint:** Use array methods like `reduce()` to calculate the average.
 
@@ -39,6 +125,38 @@
 // 1. Create an object called `book` with properties: title (string), author (string), isbn (string), and isAvailable (boolean).
 // 2. Add methods: `checkOut()` and `return()`.
 // 3. These methods should change the `isAvailable` status and log a message.
+let book = {
+    title: `Find the why`,
+    author: `simon sink`,
+    isbn: 85512,
+    isAvailable: true,
+
+    checkOut: function () {
+        if (this.isAvailable === false) {
+            console.log(`The book: ${this.title} by ${this.author} has already been checked out.`);
+            return false; 
+        } else {
+            console.log(`The book: ${this.title} by ${this.author} is available to check out.`);
+            this.isAvailable = false;
+            return true;
+        }
+    
+    },
+    returnBook: function () {
+        if (this.isAvailable === false) {
+            console.log(`The book: ${this.title} by ${this.author} has been returned.`);
+            this.isAvailable = true;
+            return true;
+        } else {
+            console.log(`The book: ${this.title} by ${this.author} was not checked out.`);
+            return false;
+        }
+    }
+    
+}
+
+// console.log(book.checkOut()); 
+// console.log(book); 
 
 // **Hint:** Use conditional statements in your methods.
 

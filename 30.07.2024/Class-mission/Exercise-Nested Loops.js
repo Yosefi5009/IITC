@@ -53,7 +53,7 @@ for (i = 1; i < 5; i++) {
     } console.log(result);
 }
 
-// Exercise 3: Array Search
+// Exercise 3: Array Search 
 // Objective: Find a specific number in a 2D array and print its position.
 // Instructions:
 // Create a 2D array (e.g., let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];).
@@ -101,7 +101,7 @@ for (i = 0; i < checkWord.length; i++) {
             break;
 
         }
-    }
+    }   
 }
 console.log(`Vowels:`,countVowel);
 console.log(`constants:`,checkWord.length - countVowel);
@@ -116,7 +116,7 @@ console.log(`constants:`,checkWord.length - countVowel);
 // For input = "world", output: dlrow
 let string = 'hello';
 let stringIndex;
-reverseString;
+let reverseString;
 let reverseWord = '';
 let correctWord = '';
 
