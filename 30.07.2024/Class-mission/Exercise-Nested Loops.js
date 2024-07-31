@@ -88,6 +88,23 @@ for (i = 0; i < arr.length; i++) {
 // Example Output:
 // For input = "hello", output: olleh
 // For input = "world", output: dlrow
+let string = 'hello';
+let stringIndex;
+let reverseString;
+let reverseWord = '';
+let correctWord = '';
+
+for (let i = 0; i < string.length; i++) {
+    stringIndex = string[i];
+    correctWord += stringIndex; 
+}
+
+for (let j = string.length - 1; j >= 0; j--) {
+    reverseString = string[j];
+    reverseWord += reverseString;
+}
+
+console.log(reverseWord);
 
 // Exercise 6: Number Pyramid
 // Objective: Create a program that prints a number pyramid.
@@ -191,92 +208,6 @@ console.log(`Result of Exercise 7:`,sum);
 // Use nested loops to check each number in the range.
 // Print the prime numbers found.
 // Example Output:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // For range = (10, 20), output: Prime numbers: 11, 13, 17, 19
 
 // Exercise 14: Sort a 2D Array by Row Sum
@@ -287,5 +218,3 @@ console.log(`Result of Exercise 7:`,sum);
 // Sort the rows based on their sum and print the sorted array.
 // Example Output:
 // For arr = [[3, 1, 2], [1, 4, 5], [2, 3, 1]], output: [[2, 3, 1], [3, 1, 2], [1, 4, 5]]
-
-
