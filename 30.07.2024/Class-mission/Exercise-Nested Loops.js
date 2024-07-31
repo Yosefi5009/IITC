@@ -41,6 +41,17 @@ for (i = 0; i < 2; i++) {
 // 3 6 9 12 15
 // 4 8 12 16 20
 // 5 10 15 20 25
+let numbers = [1,2,3,4,5]
+i = 0
+let j = 0
+let result = ` `
+for (i = 1; i < 5; i++) {
+    result = ` `
+    for (j = 1; j < 5; j++) {
+        result += i * j + ` ` 
+        
+    } console.log(result);
+}
 
 // Exercise 3: Array Search
 // Objective: Find a specific number in a 2D array and print its position.
@@ -78,7 +89,22 @@ for (i = 0; i < arr.length; i++) {
 // Example Output:
 // For input = "hello", output: Vowels: 2, Consonants: 3
 // For input = "world", output: Vowels: 1, Consonants: 4
+let checkWord = `world`
+let vowels = [`e`,`a`,`o`,`i`,`u`]
+i;
+let countVowel = 0
+j;
+for (i = 0; i < checkWord.length; i++) {
+    for (j = 0; j < vowels.length; j++) {
+        if (vowels[j] === checkWord[i]) {
+            countVowel++
+            break;
 
+        }
+    }
+}
+console.log(`Vowels:`,countVowel);
+console.log(`constants:`,checkWord.length - countVowel);
 // Exercise 5: Reverse a String
 // Objective: Write a program that reverses a given string using nested loops.
 // Instructions:
@@ -90,7 +116,7 @@ for (i = 0; i < arr.length; i++) {
 // For input = "world", output: dlrow
 let string = 'hello';
 let stringIndex;
-let reverseString;
+reverseString;
 let reverseWord = '';
 let correctWord = '';
 
@@ -105,6 +131,15 @@ for (let j = string.length - 1; j >= 0; j--) {
 }
 
 console.log(reverseWord);
+string = `hello`
+reverseString = ` `
+// for (i = 0; i < string.length; i++) {
+//     let charString = string[i]
+//     console.log(charString);
+    for (j = string.length -1; j > 0; j--) {
+        reverseString +=  string[j]
+    }   
+    console.log(reverseString);
 
 // Exercise 6: Number Pyramid
 // Objective: Create a program that prints a number pyramid.
@@ -147,11 +182,10 @@ k;
 let p;
 for (i = 0; i < arr.length; i++) {
     j = arr[i]
-    // console.log(j);
     for(k = 0; k < j.length; k++) {
         p = j[k]
         sum += p
-        // console.log(p);
+
     }
 
 }
@@ -173,7 +207,21 @@ console.log(`Result of Exercise 7:`,sum);
 // Store all elements in a new 1D array and print the result.
 // Example Output:
 // For arr = [[1, 2], [3, 4], [5, 6]], output: [1, 2, 3, 4, 5, 6]
+arr = [[1, 2], [3, 4], [5, 6]]
+i;
+j;
+k;
+p;
+let newArr = [ ]
+for (i = 0; i < arr.length; i++) {
+    j = arr[i]
+    for(k = 0; k < j.length; k++) {
+        p = j[k]
+        newArr.push(p)
 
+    }
+}
+console.log(newArr);
 // Exercise 10: Matrix Transpose
 // Objective: Transpose a given matrix.
 // Instructions:
@@ -182,7 +230,19 @@ console.log(`Result of Exercise 7:`,sum);
 // Print the transposed matrix.
 // Example Output:
 // For matrix = [[1, 2, 3], [4, 5, 6]], output: [[1, 4], [2, 5], [3, 6]]
+arr = [[1, 2, 3], [4, 5, 6]]
+i;
+let arrIndex;
+let ArrInIndex;
+newArr = [ ]
 
+for (i = 0; i < arr.length; i++) {
+    ArrIndex = arr[i]
+    for (k = 0; k < ArrIndex.length; k++) {
+        ArrInIndex = ArrIndex[k]
+        console.log(ArrInIndex);
+    } 
+}
 // Exercise 11: Palindrome Check
 // Objective: Check if a given string is a palindrome.
 // Instructions:
@@ -192,6 +252,30 @@ console.log(`Result of Exercise 7:`,sum);
 // Example Output:
 // For input = "radar", output: Palindrome
 // For input = "hello", output: Not a palindrome
+i;
+j;
+string = "radar";
+let isPalindrome = true;
+
+for (i = 0; i < string.length; i++) {
+    let char = string[i];
+    
+    for (j = string.length - 1 - i; j >= 0; j--) {
+        let reverseChar = string[j];
+
+        if (char !== reverseChar) {
+            isPalindrome = false;
+            break;
+        }
+
+        break; 
+    }
+
+    if (!isPalindrome) break;
+}
+
+console.log(isPalindrome);
+
 
 // Exercise 12: Find Common Elements in Two Arrays
 // Objective: Find common elements between two arrays.
@@ -200,6 +284,8 @@ console.log(`Result of Exercise 7:`,sum);
 // Use nested loops to find and print the common elements.
 // Example Output:
 // For arr1 = [1, 2, 3, 4] and arr2 = [3, 4, 5, 6], output: Common elements: 3, 4
+arr1 = [1, 2, 3, 4]
+arr2 = [3, 4, 5, 6]
 
 // Exercise 13: Check for Prime Numbers in a Range
 // Objective: Write a program to find all prime numbers in a given range.
@@ -209,6 +295,20 @@ console.log(`Result of Exercise 7:`,sum);
 // Print the prime numbers found.
 // Example Output:
 // For range = (10, 20), output: Prime numbers: 11, 13, 17, 19
+arr = [1,2,3,4,5,6,7,8,9,10]
+i;
+let primeNumbers = (``)
+
+j;
+ for (i = 0; i < arr.length; i++) {
+    for ( j = 0; j < arr.length; j++) {
+        if (arr[i] % 2 === 0) {
+            primeNumbers += `${arr[i]},`            
+            break;
+        }
+    }
+ }
+ console.log(`Prime Numbers:`,primeNumbers);
 
 // Exercise 14: Sort a 2D Array by Row Sum
 // Objective: Sort the rows of a 2D array based on the sum of their elements.
