@@ -14,19 +14,18 @@
 // ***
 // ****
 // *****
-let i = 0
-let row = 0
-let secondline = ` `
-let column = ``
-let combined;
-for (i = 0; i < 2; i++) {
-    secondline += '*'
-    console.log(secondline);
-}   for(row = 0; row < 3; row++) {
-    column += `*`
-    combined = secondline+column
-    console.log(combined);
+
+function starPattern(x) {
+    for (i = 0; i <= x; i++) {
+        row = ``
+        for (j = 0; j < i; j++) {
+            row += `*`
+
+        }
+        console.log(row);
+    }
 }
+// starPattern(5)
 
 // Exercise 2: Multiplication Table
 // Objective: Write a program that prints a multiplication table for numbers 1 through 5.
@@ -41,17 +40,19 @@ for (i = 0; i < 2; i++) {
 // 3 6 9 12 15
 // 4 8 12 16 20
 // 5 10 15 20 25
-let numbers = [1,2,3,4,5]
-i = 0
-let j = 0
-let result = ` `
-for (i = 1; i < 5; i++) {
-    result = ` `
-    for (j = 1; j < 5; j++) {
-        result += i * j + ` ` 
-        
-    } console.log(result);
+
+function multiplicationTable(x) {
+    for (i = 1; i <= x; i++) {
+        let row = ` `
+        for (j = 1; j <= x; j++) {
+            row += ` ${j*i}`
+             
+        }
+        console.log(row)
+    }
 }
+
+// multiplicationTable(5)
 
 // Exercise 3: Array Search 
 // Objective: Find a specific number in a 2D array and print its position.
@@ -63,21 +64,20 @@ for (i = 1; i < 5; i++) {
 // Example Output:
 // For target = 5, output: Found 5 at position (1, 1)
 // For target = 7, output: Found 7 at position (2, 0)
-let arr = [
-[1, 2, 3], 
-[4, 5, 6], 
-[7, 8, 9]]
-let num = 9
-j = 0
-let k;
-for (i = 0; i < arr.length; i++) {
-    j = arr[i]
-    console.log(`3D Scope:`,j);
-}   for(k = 0; k < j.length; k++) {
-    if (j[k] === num) {
-        console.log(`Found at 3D scope: ${[i]}\nat 2D scope: ${[k]}\nThe Target Num: ${j[k]}`);
+let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+function arrySearch(x) {
+        for (i = 0; i <= 2; i++) {
+            for (j = 0; j <= 2; j++) {
+                if(x === arr[i][j]) {
+                    console.log(`Found ${x} at position: (${i},${j})`);
+                }
+            }
+        }
     }
-}
+
+// arrySearch(5)
+
 // Exercise 4: Count Vowels and Consonants
 // Objective: Write a program to count the number of vowels and consonants in a given string.
 // Instructions:
@@ -89,22 +89,25 @@ for (i = 0; i < arr.length; i++) {
 // Example Output:
 // For input = "hello", output: Vowels: 2, Consonants: 3
 // For input = "world", output: Vowels: 1, Consonants: 4
-let checkWord = `world`
-let vowels = [`e`,`a`,`o`,`i`,`u`]
-i;
-let countVowel = 0
-j;
-for (i = 0; i < checkWord.length; i++) {
-    for (j = 0; j < vowels.length; j++) {
-        if (vowels[j] === checkWord[i]) {
-            countVowel++
-            break;
+let isVowel = [`A`, `E`, `I`, `O`, `U`,`a`, `e`, `i`, `o`, `u`]
 
+function numberVowels(word) {
+    let vowelsAmount = 0
+    let consonantsAmount = 0
+    for (i = 0; i < word.length; i++) {
+        for ( j = 0; j < isVowel.length; j++) {
+            if (word[i] === isVowel[j]) {
+                vowelsAmount++
+            }
+        
         }
-    }   
+            
+    }
+    console.log(`Vowels: ${vowelsAmount}\nConsonants: ${word.length - vowelsAmount}`)
 }
-console.log(`Vowels:`,countVowel);
-console.log(`constants:`,checkWord.length - countVowel);
+
+// numberVowels(`Sequoia`)
+
 // Exercise 5: Reverse a String
 // Objective: Write a program that reverses a given string using nested loops.
 // Instructions:
@@ -114,32 +117,20 @@ console.log(`constants:`,checkWord.length - countVowel);
 // Example Output:
 // For input = "hello", output: olleh
 // For input = "world", output: dlrow
-let string = 'hello';
-let stringIndex;
-let reverseString;
-let reverseWord = '';
-let correctWord = '';
 
-for (let i = 0; i < string.length; i++) {
-    stringIndex = string[i];
-    correctWord += stringIndex; 
+function reverseWord(str) {
+    for (i = 0; i < str.length; i++) {
+        let reverse = " "
+        for (j = str.length - 1; j >= 0; j--) {
+            reverse += str[j]
+        
+        }
+        console.log(reverse)
+    }
+    
 }
 
-for (let j = string.length - 1; j >= 0; j--) {
-    reverseString = string[j];
-    reverseWord += reverseString;
-}
-
-console.log(reverseWord);
-string = `hello`
-reverseString = ` `
-// for (i = 0; i < string.length; i++) {
-//     let charString = string[i]
-//     console.log(charString);
-    for (j = string.length -1; j > 0; j--) {
-        reverseString +=  string[j]
-    }   
-    console.log(reverseString);
+// reverseWord(`world`)
 
 // Exercise 6: Number Pyramid
 // Objective: Create a program that prints a number pyramid.
@@ -154,17 +145,7 @@ reverseString = ` `
 // 1234
 // 12345
 
-let currentRow;
-let rowCount;
-let columnCount;
 
-for (rowCount = 1; rowCount <= 5; rowCount++) {
-    currentRow = ``;
-    for (columnCount = 1; columnCount <= rowCount; columnCount++) {
-        currentRow += columnCount;
-    }
-    console.log(currentRow);
-}
 
 // Exercise 7: Sum of 2D Array Elements
 // Objective: Calculate the sum of all elements in a 2D array.
@@ -174,22 +155,7 @@ for (rowCount = 1; rowCount <= 5; rowCount++) {
 // Sum all the elements and print the total.
 // Example Output:
 // For arr = [[1, 2], [3, 4], [5, 6]], output: Sum: 21
-arr = [[1, 2], [3, 4], [5, 6]]
-let sum = 0
-i;
-j;
-k;
-let p;
-for (i = 0; i < arr.length; i++) {
-    j = arr[i]
-    for(k = 0; k < j.length; k++) {
-        p = j[k]
-        sum += p
 
-    }
-
-}
-console.log(`Result of Exercise 7:`,sum);
 // Exercise 8: Character Frequency
 // Objective: Write a program to find the frequency of each character in a string.
 // Instructions:
@@ -207,21 +173,7 @@ console.log(`Result of Exercise 7:`,sum);
 // Store all elements in a new 1D array and print the result.
 // Example Output:
 // For arr = [[1, 2], [3, 4], [5, 6]], output: [1, 2, 3, 4, 5, 6]
-arr = [[1, 2], [3, 4], [5, 6]]
-i;
-j;
-k;
-p;
-let newArr = [ ]
-for (i = 0; i < arr.length; i++) {
-    j = arr[i]
-    for(k = 0; k < j.length; k++) {
-        p = j[k]
-        newArr.push(p)
 
-    }
-}
-console.log(newArr);
 // Exercise 10: Matrix Transpose
 // Objective: Transpose a given matrix.
 // Instructions:
@@ -230,19 +182,7 @@ console.log(newArr);
 // Print the transposed matrix.
 // Example Output:
 // For matrix = [[1, 2, 3], [4, 5, 6]], output: [[1, 4], [2, 5], [3, 6]]
-arr = [[1, 2, 3], [4, 5, 6]]
-i;
-let arrIndex;
-let ArrInIndex;
-newArr = [ ]
 
-for (i = 0; i < arr.length; i++) {
-    ArrIndex = arr[i]
-    for (k = 0; k < ArrIndex.length; k++) {
-        ArrInIndex = ArrIndex[k]
-        console.log(ArrInIndex);
-    } 
-}
 // Exercise 11: Palindrome Check
 // Objective: Check if a given string is a palindrome.
 // Instructions:
@@ -252,30 +192,6 @@ for (i = 0; i < arr.length; i++) {
 // Example Output:
 // For input = "radar", output: Palindrome
 // For input = "hello", output: Not a palindrome
-i;
-j;
-string = "radar";
-let isPalindrome = true;
-
-for (i = 0; i < string.length; i++) {
-    let char = string[i];
-    
-    for (j = string.length - 1 - i; j >= 0; j--) {
-        let reverseChar = string[j];
-
-        if (char !== reverseChar) {
-            isPalindrome = false;
-            break;
-        }
-
-        break; 
-    }
-
-    if (!isPalindrome) break;
-}
-
-console.log(isPalindrome);
-
 
 // Exercise 12: Find Common Elements in Two Arrays
 // Objective: Find common elements between two arrays.
@@ -284,8 +200,7 @@ console.log(isPalindrome);
 // Use nested loops to find and print the common elements.
 // Example Output:
 // For arr1 = [1, 2, 3, 4] and arr2 = [3, 4, 5, 6], output: Common elements: 3, 4
-arr1 = [1, 2, 3, 4]
-arr2 = [3, 4, 5, 6]
+
 
 // Exercise 13: Check for Prime Numbers in a Range
 // Objective: Write a program to find all prime numbers in a given range.
@@ -295,20 +210,7 @@ arr2 = [3, 4, 5, 6]
 // Print the prime numbers found.
 // Example Output:
 // For range = (10, 20), output: Prime numbers: 11, 13, 17, 19
-arr = [1,2,3,4,5,6,7,8,9,10]
-i;
-let primeNumbers = (``)
 
-j;
- for (i = 0; i < arr.length; i++) {
-    for ( j = 0; j < arr.length; j++) {
-        if (arr[i] % 2 === 0) {
-            primeNumbers += `${arr[i]},`            
-            break;
-        }
-    }
- }
- console.log(`Prime Numbers:`,primeNumbers);
 
 // Exercise 14: Sort a 2D Array by Row Sum
 // Objective: Sort the rows of a 2D array based on the sum of their elements.
