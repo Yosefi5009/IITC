@@ -177,7 +177,7 @@ function arrayElements() {
     console.log(`Sum: ${sum}`);
 }
 
-arrayElements();
+// arrayElements();
 
 // Exercise 8: Character Frequency
 // Objective: Write a program to find the frequency of each character in a string.
