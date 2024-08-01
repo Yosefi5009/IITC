@@ -145,7 +145,17 @@ function reverseWord(str) {
 // 1234
 // 12345
 
+function numberPyramid(x) {
+    for (i = 1; i <= x; i++) {
+        row = ``
+        for (j = 1; j <= i; j++) {
+            row += j
 
+        }
+        console.log(row);
+    }
+}
+// numberPyramid(5)
 
 // Exercise 7: Sum of 2D Array Elements
 // Objective: Calculate the sum of all elements in a 2D array.
@@ -155,6 +165,19 @@ function reverseWord(str) {
 // Sum all the elements and print the total.
 // Example Output:
 // For arr = [[1, 2], [3, 4], [5, 6]], output: Sum: 21
+arr = [[1, 2], [3, 4], [5, 6]];
+
+function arrayElements() {
+    let sum = 0;
+    for (i = 0; i < arr.length; i++) {
+        for (j = 0; j < arr[i].length; j++) {
+            sum += arr[i][j];
+        }
+    }
+    console.log(`Sum: ${sum}`);
+}
+
+arrayElements();
 
 // Exercise 8: Character Frequency
 // Objective: Write a program to find the frequency of each character in a string.
