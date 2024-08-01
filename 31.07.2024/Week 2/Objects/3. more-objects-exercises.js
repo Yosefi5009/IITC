@@ -109,15 +109,42 @@ let student = {
 // console.log(student.getLetterGrade())
 
 
-
-
-
 // **Hint:** Use array methods like `reduce()` to calculate the average.
 
 // ## Exercise 15: To-Do List
 // 1. Create an object called `todoList` with properties: tasks (array of strings) and completedTasks (array of strings).
 // 2. Add methods: `addTask(task)`, `completeTask(task)`, and `displayTasks()`.
 // 3. `completeTask(task)` should move a task from tasks to completedTasks.
+let todoList = {
+    tasks: [`count to 1`,`clean the garbage`,`clean the toilet`,`make food for the children`,`go to the gym`],
+    completedTasks: [ ],
+
+    // create addTask function and adds isTask to the todoList object.
+    addTask: function () {
+        this.addToTasks = [ ]
+        let isTask = `Go for a run`
+        this.addToTasks.push(isTask)
+        return this.addToTasks
+        
+        },
+        // create completeTask function that moves the tasks to completed tasks
+        completeTask: function () {
+            this.completeTask = false
+            let keysObject = Object.keys(this)
+            console.log(this[keysObject[0]]);
+
+
+            for (let i = 0; i < this[keysObject[0]].length; i++) {
+                let completeTask = this[keysObject[0]]
+                this.completedTasks.push(completeTask[i])
+    
+                }
+            }  
+        }
+
+
+console.log(todoList.completeTask());
+console.log(todoList);
 
 // **Hint:** Use array methods like `push()` and `filter()`.
 
