@@ -30,7 +30,18 @@
 
 // ## Exercise 5
 // Print a 3x3 multiplication table.
+function multiplicationTable(x) {
+    for (i = 1; i <= x; i++) {
+        let row = ` `
+        for (j = 1; j <= x; j++) {
+            row += ` ${j*i}`
+             
+        }
+        console.log(row)
+    }
+}
 
+// multiplicationTable(3)
 // Hint: Multiply the outer loop variable by the inner loop variable.
 
 // [Learn about multiplication tables](https://www.w3resource.com/javascript-exercises/javascript-conditional-statements-and-loops-exercise-62.php)

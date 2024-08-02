@@ -52,7 +52,7 @@ function multiplicationTable(x) {
     }
 }
 
-// multiplicationTable(5)
+multiplicationTable(5)
 
 // Exercise 3: Array Search 
 // Objective: Find a specific number in a 2D array and print its position.
