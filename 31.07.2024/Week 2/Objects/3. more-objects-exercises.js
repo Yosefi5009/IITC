@@ -116,8 +116,8 @@ let student = {
 // 2. Add methods: `addTask(task)`, `completeTask(task)`, and `displayTasks()`.
 // 3. `completeTask(task)` should move a task from tasks to completedTasks.
 let todoList = {
-    tasks: [`count to 1`,`clean the garbage`,`clean the toilet`,`make food for the children`,`go to the gym`],
-    completedTasks: [ ],
+    tasks: [`this is the tasks`,`clean the garbage`,`clean the toilet`,`make food for the children`,`go to the gym`],
+    completedTasks: [],
 
     // create addTask function and adds isTask to the todoList object.
     addTask: function () {
@@ -131,20 +131,28 @@ let todoList = {
         completeTask: function () {
             this.completeTask = false
             let keysObject = Object.keys(this)
-            console.log(this[keysObject[0]]);
+            let thisIsTasks = this[keysObject[0]]
 
 
-            for (let i = 0; i < this[keysObject[0]].length; i++) {
-                let completeTask = this[keysObject[0]]
-                this.completedTasks.push(completeTask[i])
-    
+            
+            for (i = 0; i < thisIsTasks.length; i++) {
+                this.completedTasks.push(thisIsTasks[i])
+                
+                for (j = 0; j < thisIsTasks.length; j++) {
+                    
+
                 }
-            }  
+                
+            }
+            
+
         }
 
+    }
 
 console.log(todoList.completeTask());
 console.log(todoList);
+
 
 // **Hint:** Use array methods like `push()` and `filter()`.
 
