@@ -197,6 +197,20 @@ function arrayElements() {
 // Example Output:
 // For arr = [[1, 2], [3, 4], [5, 6]], output: [1, 2, 3, 4, 5, 6]
 
+arr = [[1, 2], [3, 4], [5, 6]]
+
+function flatt2D () {
+    let oneDarray = []
+    for (i = 0; i < arr.length; i++) {
+        for (j = 0; j < arr[i].length; j++) {
+            oneDarray.push(arr[i][j])
+        }
+    
+    }
+    console.log(oneDarray);
+}
+// flatt2D(arr)
+
 // Exercise 10: Matrix Transpose
 // Objective: Transpose a given matrix.
 // Instructions:
@@ -205,6 +219,7 @@ function arrayElements() {
 // Print the transposed matrix.
 // Example Output:
 // For matrix = [[1, 2, 3], [4, 5, 6]], output: [[1, 4], [2, 5], [3, 6]]
+
 
 // Exercise 11: Palindrome Check
 // Objective: Check if a given string is a palindrome.
@@ -215,6 +230,30 @@ function arrayElements() {
 // Example Output:
 // For input = "radar", output: Palindrome
 // For input = "hello", output: Not a palindrome
+
+function checkPal (str) {
+    let isPalindrome = true
+    
+    for (i = 0; i < str.length; i++) {
+        let reverseWord = ``
+        for (j = str.length -1 ; j >= 0; j--) {
+            reverseWord += str[j]
+    
+            }
+            if (reverseWord === str) {
+                console.log(`Word is palindrome:`,isPalindrome)
+
+            
+        } else {
+            isPalindrome = false
+            console.log(`NOT PALINDROME:`,isPalindrome);
+            
+        }
+        
+      
+    }
+}
+// checkPal(`deed`)
 
 // Exercise 12: Find Common Elements in Two Arrays
 // Objective: Find common elements between two arrays.
