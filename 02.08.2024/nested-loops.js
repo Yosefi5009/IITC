@@ -10,6 +10,7 @@
 // ## Exercise 2
 // Print numbers from 1 to 4 in a 2x2 grid.
 // Hint: Use a counter variable that increments in the inner loop.
+
 function numbersGrid(number) {
     for (i = 0; i < number; i++) {
         let count = 1
@@ -29,6 +30,8 @@ function numbersGrid(number) {
 
 // ## Exercise 3
 // Print a right-angled triangle of asterisks with 3 rows.
+// Hint: The outer loop controls rows, the inner loop prints asterisks based on the row number.
+
 function triangle(x) {
 
     for (i = 0; i < x; i++) {
@@ -43,7 +46,6 @@ function triangle(x) {
     
 }
 // triangle(3)
-// Hint: The outer loop controls rows, the inner loop prints asterisks based on the row number.
 
 // [Learn about triangular patterns](https://www.programiz.com/javascript/examples/pyramid-pattern)
 
@@ -55,6 +57,8 @@ function triangle(x) {
 
 // ## Exercise 5
 // Print a 3x3 multiplication table.
+// Hint: Multiply the outer loop variable by the inner loop variable.
+
 function multiplicationTable(x) {
     for (i = 1; i <= x; i++) {
         let row = ` `
@@ -66,7 +70,6 @@ function multiplicationTable(x) {
     }
 }
 // multiplicationTable(3)
-// Hint: Multiply the outer loop variable by the inner loop variable.
 
 // [Learn about multiplication tables](https://www.w3resource.com/javascript-exercises/javascript-conditional-statements-and-loops-exercise-62.php)
 
