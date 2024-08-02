@@ -9,21 +9,46 @@
 
 // ## Exercise 2
 // Print numbers from 1 to 4 in a 2x2 grid.
-
 // Hint: Use a counter variable that increments in the inner loop.
+function numbersGrid(number) {
+    for (i = 0; i < number; i++) {
+        let count = 1
+        row = ``
+        for (j = 0; j < number; j++) {
+            row += ` ${count++} ` + `${count}\n`
+            count++
+            
+        }
+        
+        console.log(row); 
+    }
+}
+// numbersGrid(2)
 
 // [Learn about variables in loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#loop_scope_and_closures)
 
 // ## Exercise 3
 // Print a right-angled triangle of asterisks with 3 rows.
+function triangle(x) {
 
+    for (i = 0; i < x; i++) {
+        let row = ``
+
+        for (j = 0; j <= i; j++) {
+            row += `*`
+              
+        }
+        console.log(row) 
+    }
+    
+}
+// triangle(3)
 // Hint: The outer loop controls rows, the inner loop prints asterisks based on the row number.
 
 // [Learn about triangular patterns](https://www.programiz.com/javascript/examples/pyramid-pattern)
 
 // ## Exercise 4
-// Print a 3x3 grid where each cell contains the sum of its indices.
-
+// Print a 3x3 grid where each cell contains the sum of its indices. 
 // Hint: Use the loop variables as indices and add them.
 
 // [Learn about 2D arrays](https://www.freecodecamp.org/news/javascript-2d-arrays/)
@@ -40,7 +65,6 @@ function multiplicationTable(x) {
         console.log(row)
     }
 }
-
 // multiplicationTable(3)
 // Hint: Multiply the outer loop variable by the inner loop variable.
 
