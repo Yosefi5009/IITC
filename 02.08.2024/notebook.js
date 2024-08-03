@@ -1,7 +1,7 @@
 for (let i = 0; i < 5; i++) {       // Outer loop for rows
-    let row = `out loop${i}: `;          // Initialize the row string with the outer loop iteration number
+    let row = `⬇️${[i]}: `;          // Initialize the row string with the outer loop iteration number
     for (let j = 0; j < 5; j++) {   // Inner loop for columns
-        row += `in loop${j} `;        // Append the inner loop iteration number to the row string
+        row += `➡️${j} `;        // Append the inner loop iteration number to the row string
     }
     console.log(row);               // Print the completed row string
 }
