@@ -6,14 +6,14 @@
 // 3. Calculate and log the average song duration (assume each song is 3 minutes long).
 // **Hint:** Use the `length` property of the array to get the number of songs.
 
-let playList = {
+ let playList = {
     name: `Joseph Music`,
     songs: [`Headrush`,`Fireball`,`Whats in my head`,`Paris`,`Forget It`],
     duration: 15,
 }
 let playListKeys = Object.keys(playList)
 playList[playListKeys[1]].push(`baby`)
-console.log(playList[playListKeys[1]]);
+// console.log(playList[playListKeys[1]]);
 
 
 // ## Exercise 12: Bank Account
@@ -120,33 +120,29 @@ let todoList = {
     // create addTask function and adds isTask to the todoList object.
     addTask: function () {
         this.addToTasks = [ ]
-        let isTask = `Go for a run`
+        let isTask = `go to poop`
         this.addToTasks.push(isTask)
         return this.addToTasks
         
         },
-        // create completeTask function that moves the tasks to completed tasks
-        completeTask: function () {
-            this.completeTask = false
-            let keysObject = Object.keys(this)
-            let thisIsTasks = this[keysObject[0]]
 
-
-            
-            for (i = 0; i < thisIsTasks.length; i++) {
-                this.completedTasks.push(thisIsTasks[i])
-                
-                for (j = 0; j < thisIsTasks.length; j++) {
-                    
-
-                }
-                
+        completeTask: function() {
+            while (this.tasks.length > 0) {
+                let removeTask = this.tasks.pop();
+                this.completedTasks.push(removeTask);
             }
-            
-
+        },
+        
+        displayTasks: function() {
+            console.log('Tasks:', this.tasks);
+            console.log('Completed Tasks:', this.completedTasks);
         }
+    };
+    
+// Adding a new task
+todoList.addTask();
 
-    }
+
 
 // ## Exercise 16: Library Book
 // 1. Create an object called `book` with properties: title (string), author (string), isbn (string), and isAvailable (boolean).
