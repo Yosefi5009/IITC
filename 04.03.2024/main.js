@@ -70,12 +70,6 @@ let employees = [
   
   console.log(groupBy(employees, "department"));
   
-  function groupBy(array, key) {
-    let group = {};
-  
-    return group;
-  }
-  
   /*
   {
     Engineering: [
@@ -93,14 +87,26 @@ let employees = [
 
 function groupBy (array , key) {
     let group = {}
-    let EngineeringGroup = []
-    for (i = 0 ; i < array.length; i++) {
-        let departmentType = array[i]
-        console.log(departmentType);
-        
+    //What i did:
+    // for (i = 0 ; i < array.length; i++) {
+    //     let departmentType = array[i]
+    //     console.log(departmentType);
 
-        }
+    //What Omer did:s
+    for (i = 0; i < array.length; i++) {
+        let item = array[i]
+        // console.log(item);
         
+        let groupKey = item[key]
+        // console.log(groupKey);
+         if (group[groupKey] === undefined) {
+            group[groupKey] = []
+
+         }
+         group[groupKey].push(item)
     }
+ return group
+}
+groupBy(employees, "department")
 
-groupBy (employees, "department")
+    
