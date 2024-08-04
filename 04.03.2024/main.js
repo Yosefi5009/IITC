@@ -56,4 +56,51 @@ function createPersons(names) {
     }
 
 
-createPersons([`yossi`,`liraz`,`baba`])
+// createPersons([`yossi`,`liraz`,`baba`])
+
+
+let employees = [
+    { name: "John Doe", department: "Engineering", yearsOfExp: 5 },
+    { name: "Jane Smith", department: "Marketing", yearsOfExp: 8 },
+    { name: "Peter Johnson", department: "Engineering", yearsOfExp: 5 },
+    { name: "Lucy Brown", department: "Marketing", yearsOfExp: 10 },
+    { name: "Mike Davis", department: "Engineering", yearsOfExp: 3 },
+    { name: "Sara Wilson", department: "Marketing", yearsOfExp: 8 },
+  ];
+  
+  console.log(groupBy(employees, "department"));
+  
+  function groupBy(array, key) {
+    let group = {};
+  
+    return group;
+  }
+  
+  /*
+  {
+    Engineering: [
+      { name: 'John Doe', department: 'Engineering', yearsOfExp: 5 },
+      { name: 'Peter Johnson', department: 'Engineering', yearsOfExp: 5 },
+      { name: 'Mike Davis', department: 'Engineering', yearsOfExp: 3 }
+    ],
+    Marketing: [
+      { name: 'Jane Smith', department: 'Marketing', yearsOfExp: 8 },
+      { name: 'Lucy Brown', department: 'Marketing', yearsOfExp: 10 },
+      { name: 'Sara Wilson', department: 'Marketing', yearsOfExp: 8 }
+    ]
+  }
+  */
+
+function groupBy (array , key) {
+    let group = {}
+    let EngineeringGroup = []
+    for (i = 0 ; i < array.length; i++) {
+        let departmentType = array[i]
+        console.log(departmentType);
+        
+
+        }
+        
+    }
+
+groupBy (employees, "department")
