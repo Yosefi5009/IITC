@@ -102,7 +102,7 @@ function updatePrice(product, newPrice) {
 
 // TODO: Write a function to remove a category from the product
 function removeCategory(product, category) {
-    delete product.categories[product.categories.length - 1];
+    delete product.categories[product.categories.indexOf(category)];
     return category
     
 }
@@ -151,8 +151,8 @@ function getAvailableSizes(products) {
     return newArray
 }
 
-// let sizes = getAvailableSizes(products);
-// console.log("Available Sizes:", sizes);
+let sizes = getAvailableSizes(products);
+console.log("Available Sizes:", sizes);
 
 /////////////////////////////////////////////////////
 
