@@ -382,65 +382,199 @@ function concatArrays(array1, array2) {
 
 // 1. Create an object "person" with properties "name" and "age". Output the object.
 // Output: {name: "YourName", age: YourAge}
+let person = {
+    name: ``,
+    age: 0 ,
+}
+person.name = `Joseph`
+person.age = 24
+// console.log(person);
 
 // 2. Declare an object "car" with properties "brand" and "model". Output the brand property.
 // Output: brand of the car
+let car = {
+    brand: ``,
+    model: ``,
+}
+// console.log(car.brand = `mazda`);
 
 // 3. Create an object "book" with properties "title", "author", and "pages". Output the object.
 // Output: {title: "Title", author: "Author", pages: Number}
+let book = {
+    title: `title`,
+    author: `author`,
+    pages: 0,
+}
+// console.log(book);
+
 
 // 4. Write a function "getFullName" that takes an object with properties "firstName" and "lastName" and returns the full name. Output the result.
 // Output: full name
+let information = {
+    firstName: `Joseph`,
+    lastName: `Sabag`
+}
+function getFullName (name) {
+    console.log(name.firstName, name.lastName);
+    return
+    
+
+}
+// getFullName(information)
 
 // 5. Create an object "student" with properties "name", "age", and "grades" (an array). Output the student's name and the average grade.
 // Output: name and average grade
+let student = {
+    name: `Joseph Sabag`,
+    age: 24,
+    grades: [100,95,92,90,89,97]
+}
+sum = 0
+for (i = 0; i < student.grades.length; i++) {
+    sum += student.grades[i]
+}
+let averageGrade = sum/student.grades.length
+
+// console.log(student.name,`the average grades of our student is:`,averageGrade);
+
 
 // 6. Declare an object "address" with properties "city", "street", and "zip". Output the city property.
 // Output: city
+let address = {
+    city: `tel aviv`,
+    street: `nehemia tamari 5`,
+    zipcode: 543954398,
+}
+// console.log(address.city);
 
 // 7. Create an object "company" with properties "name" and "employees" (an array of objects with properties "name" and "position"). Output the company object.
 // Output: company object
+const company = {
+    name: "Tech Solutions",
+    employees: [
+        {
+            name: "Alice",
+            position: "Developer"
+        },
+        {
+            name: "Bob",
+            position: "Designer"
+        },
+        {
+            name: "Charlie",
+            position: "Manager"
+        }
+    ]
+};
+// console.log(company);
+
 
 // 8. Write a function "updateAge" that takes an object with a property "age" and a number, and updates the age property. Output the updated object.
 // Output: updated object
+let isHumanAge = {
+    age: 20
+};
+
+function updateAge (object) {
+    object.age = 25
+    console.log(`Object updated to:`,object.age);
+    return object.age
+    
+
+}
+// console.log(isHumanAge);
+// updateAge(isHumanAge)
+// console.log(isHumanAge);
 
 // 9. Create an object "movie" with properties "title", "director", and "year". Output the movie's title and director.
 // Output: title and director
-
-// 10. Declare an object "library" with properties "name" and "books" (an array of objects with properties "title" and "author"). Output the library object.
-// Output: library object
+let movie = {
+    title: `Spider-man2`,
+    director: `don't know`,
+    year: 2000,
+}
+// console.log(movie.title,movie.director);
 
 // Loops 
 
 // 1. Write a for loop to output numbers 1 to 5.
 // Output: 1, 2, 3, 4, 5
+// function exerciseOne () {
+// for (i = 1; i <= 5; i++){
+//     console.log(i); 
+// }
+// }
 
 // 2. Create an array "colors" and use a for loop to output each color.
 // Output: each color in the array
+// colors = ["red", "blue", "green", "yellow"];
+// for (i = 0; i < colors.length; i++){
+//     console.log(colors[i]); 
+// }
 
 // 3. Write a while loop to output numbers from 5 to 1.
 // Output: 5, 4, 3, 2, 1
+// i = 0
+// while (i < 5) {
+//     i++
+//     console.log(i);  
+// }
 
 // 4. Create an array "numbers" and use a for loop to output the sum of the numbers.
 // Output: sum of the numbers
+// numbers = [1, 2, 3, 4, 5];
+// sum = 0
+// for (i = 0 ; i < numbers.length; i++) {
+//     sum += numbers[i]
+    
+    
+// }console.log(sum);
 
 // 5. Write a for loop to output the even numbers from 1 to 10.
 // Output: 2, 4, 6, 8, 10
+// for (i = 2; i <= 10; i++) {
+//     if (i % 2 === 0) {
+//         console.log(i);
+        
+//     }
+// }
 
 // 6. Create a for loop to output the first 10 multiples of 3.
 // Output: 3, 6, 9, 12, 15, 18, 21, 24, 27, 30
+// for (i = 1; i <= 10; i++) {
+//     console.log(i*3);
+    
+// }
 
 // 7. Write a for loop to output the elements of an array in reverse order.
 // Output: elements in reverse order
+// randomArray = [42, 'apple', true, 3.14,2,5,654,432,];
+// for (i = randomArray.length - 1; i > 0; i--) {
+//     console.log(`this is number index: ${i}`,randomArray[i]);
+        
+//     }
+    
 
 // 8. Create an array "grades" and use a for loop to output how many grades are above 80.
 // Output: count of grades above 80
+// grades = [85, 92, 78, 90, 88, 76, 95, 89];
+// let aboveEighty = 0
+// for (i = 0; i < grades.length; i++) {
+//     if(grades[i] > 80) {
+//         aboveEighty += 1
 
-// 9. Write a while loop to output the factorial of a given number.
-// Output: factorial of the number
+//     }
+// }console.log(`the amount above is: ${aboveEighty}`);
+
 
 // 10. Create an array "words" and use a for loop to output each word in uppercase.
 // Output: each word in uppercase
+// let wordsArray = ["hello", "word", "JavaScript", "programming"];
+// for (i = 0; i < wordsArray.length; i++) {
+//     console.log(wordsArray[i].toUpperCase());
+    
+// }
+
 
 // Nested Loops 
 
@@ -449,6 +583,16 @@ function concatArrays(array1, array2) {
 // 1 2 3
 // 1 2 3
 // 1 2 3
+// let num = 1
+// for (i = 1; i <= 3; i++) {
+//     row = ``
+//     for (j = 1; j <= 3; j++) {
+//         row += `${num} ` + `${num+1} ` + `${num+2} `+`\n` 
+
+//     }
+//     console.log(row);
+    
+// }  
 
 // 2. Create a nested loop to output a multiplication table from 1 to 5.
 // Output: multiplication table
@@ -460,15 +604,41 @@ function concatArrays(array1, array2) {
 // ***
 // ****
 // *****
-
+// for (i = 0; i <= 5; i++) {
+//     row = ``
+//     for (j = 0; j < i; j++){
+//         row += `*`
+//     }
+//     console.log(row);
+    
+// }
 // 4. Create an array of arrays (matrix) and use nested loops to output each element.
 // Output: each element in the matrix
+// matrix = [
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9]
+// ]
+// for (i = 0; i < matrix.length; i++) {
+//     for (j = 0; j < matrix.length; j++) {
+//         console.log(`this is each element in the matrix.`,matrix[i][j]);
+        
+//     }
+    
+// }
 
 // 5. Write a nested for loop to output all pairs of numbers from 1 to 3.
-// Output: 
-// (1,1), (1,2), (1,3)
-// (2,1), (2,2), (2,3)
-// (3,1), (3,2), (3,3)
+// Output:
+// let pairs = [
+//     [1, 1], [1, 2], [1, 3],
+//     [2, 1], [2, 2], [2, 3],
+//     [3, 1], [3, 2], [3, 3]
+// ];
+// for (let i = 1; i <= 3; i++) {
+//     for (let j = 1; j <= 3; j++) {
+//         console.log([i, j]);
+//     }
+// }
 
 // 6. Create a nested loop to output the sum of each row in a 2D array.
 // Output: sum of each row
@@ -489,4 +659,32 @@ function concatArrays(array1, array2) {
 // *****
 //  ***
 //   *
+// let count = 1;
+// for (let i = 1; i < 5; i++) {
+//     let row = ``;
+//     for (let j = 1; j <= 5; j++) {    
+//         if (count === 1) {
+//             row += `  *`+ `\n`
+//             count++;
+//         }
+//         else if (count % 2 === 0) {
+//             row += ` *** ` + `\n`
+//             count++;
+//         } 
+//         else if (count % 3 === 0) {
+//             row += `*****`+ `\n`;
+//             count++;
+//         }
+//         else if (count % 4 === 0) {
+//             row += `* `+ `\n`;
+//             count++;
+//         }
+//         else if (count % 5 === 0) {
+//             row +=`  *`+ `\n`
+//             count++
+//         }
+       
+//     } 
+//     console.log(row);
+// }
 
