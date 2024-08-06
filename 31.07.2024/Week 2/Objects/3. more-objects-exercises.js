@@ -192,8 +192,31 @@ let book = {
 // 1. Create an object called `colorMixer` with properties: color1 (string) and color2 (string).
 // 2. Add a method called `mix()` that returns a new color based on the combination of color1 and color2.
 // 3. Use predefined combinations like "red" + "blue" = "purple", "yellow" + "blue" = "green", etc.
-
 // **Hint:** Use a switch statement or object lookup for color combinations.
+
+let colorMixer = {
+    color1: `blue`,
+    color2: `red`,
+    color4: `yellow`,
+    color5: `blue`,
+    color6: ``,
+ 
+    mix: function() {
+        if (this.color1 + this.color2) {
+            this.color3 = `purple`
+            return this.color3
+
+        } else if (this.color4 + this.color5) {
+            this.color6 = `green`
+            return this.color6
+
+        }
+    
+
+    }
+}
+console.log(colorMixer.mix());
+console.log(colorMixer);
 
 // ## Exercise 18: Temperature Converter
 // 1. Create an object called `tempConverter` with properties: celsius (number) and fahrenheit (number).
