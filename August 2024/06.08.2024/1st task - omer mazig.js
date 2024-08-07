@@ -131,14 +131,14 @@ function getProductsByCategory(products, category) {
         if (products[i].categories.includes(category)) {
             electricProducts.push(`${products[i].name}`)
             
-        }
-        
-    }    
-    return electricProducts
-    }  
+        } 
 
-// const electronics = getProductsByCategory(myProducts, "electronics");
-// console.log("Electronics Products:", electronics);
+      } 
+      return electricProducts
+    }    
+
+const electronics = getProductsByCategory(myProducts, "electronics");
+console.log("Electronics Products:", electronics);
 
 
 // 🤨 Task 8: Get Average product prices 🤨
@@ -256,24 +256,24 @@ const groupedStrings_2 = groupStringsByLength(strings);
 // 🥵 Task 15: Capitalize Strings 🥵
 // TODO: Write a function to capitalize the first letter of each string in the array (You should return a new array)
 // Bonus: Capitalize the first letter of each word in the string (split by space)
-function capitalizeStrings(strings) {
-    let upperCaseString = []
-  for (let i = 0; i < strings.length; i++) {
-    for (let j = 0; j < strings[i].length; j++) {
-        if (strings[j] === strings[0]) {
-            let newString = strings[i][j].toUpperCase()
-            upperCaseString.push(newString)
+// function capitalizeStrings(strings) {
+//     let upperCaseString = []
+//   for (let i = 0; i < strings.length; i++) {
+//     for (let j = 0; j < strings[i].length; j++) {
+//         if (strings[j] === strings[0]) {
+//             let newString = strings[i][j].toUpperCase()
+//             upperCaseString.push(newString)
 
-            }
-        }
-    }
-    // console.log(upperCaseString);
-    return upperCaseString
+//             }
+//         }
+//     }
+//     // console.log(upperCaseString);
+//     return upperCaseString
         
         
-}
-const capitalizedStrings = capitalizeStrings(strings);
-console.log("Capitalized Strings:", capitalizedStrings);
+// }
+// const capitalizedStrings = capitalizeStrings(strings);
+// console.log("Capitalized Strings:", capitalizedStrings);
 
 
 
