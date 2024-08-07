@@ -66,6 +66,7 @@ function addCategory(product, category) {
 // TODO: Write a function to check if the product is available (return true if available, false otherwise)
 function isProductAvailable(product) {
   if (product.isAvailable === true) {
+    return true
 
   } else {
     product.isAvailable === false
@@ -179,9 +180,6 @@ function countCharacterOccurrences(strings, char) {
     }
     return charCount++
         }
-
-
-
 // const s_count = countCharacterOccurrences(strings, "s");
 // const c_count = countCharacterOccurrences(strings, "c");
 // console.log("Occurrences of 's':", s_count);

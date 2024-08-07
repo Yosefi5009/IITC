@@ -288,19 +288,43 @@ function sumEvenNumbers(arr) {
 // sumEvenNumbers(numbers6)
 
 // 18. Count Occurrences
-const numbers7 = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+const numbers7 = [1, 2,2,2,2,2,2,2,2, 3, 3, 3, 4, 4, 4, 4];
 // TODO: Write a function to count the occurrences of each element in an array
 function countOccurrences(arr) {
-    // your code here
+    let count = {}
+
+    for (let i = 0; i < arr.length; i++) {
+        count[`Num Count Of ${arr[i]}`] = 0;
+
+        for (let j = 0; j < arr.length; j++) {
+            if(arr[i] === arr[j]) {
+                count[`Num Count Of ${arr[i]}`] += 1
+
+
+
+            }
+        }
+    }
+    console.log(count);
 }
-countOccurrences(numbers7)
+// countOccurrences(numbers7)
 
 // 19. Remove Vowels
 const string7 = "hello world";
 // TODO: Write a function to remove vowels from a string
 function removeVowels(str) {
-    // your code here
+    let newWord = ``
+    let soundsLetters = [`A`,`E`,`O`,`U`,`I`,`a`,`e`,`o`,`u`,`i`]
+    for (let i = 0; i < str.length; i++) {
+        if (soundsLetters.includes(str[i])) {
+            continue
+        } else {
+            newWord += `${str[i]}`
+        }
+    }
+    console.log(newWord);   
 }
+// removeVowels(string7)
 
 // 20. Group by Property
 const vehicles = [
@@ -310,39 +334,30 @@ const vehicles = [
 ];
 // TODO: Write a function to group vehicles by type
 function groupByProperty(vehicles, property) {
-    // your code here
+    for (let i = 0; i < vehicles.length; i++) {
+        if (vehicles[i].type === property) {
+            console.log(vehicles[i]);
+        }
+    }
+    return vehicles
 }
+// groupByProperty(vehicles, "car")
 
 // Hard
-
-// 21. Deep Clone Object
-const object1 = { a: 1, b: { c: 2 } };
-// TODO: Write a function to deep clone an object
-function deepClone(obj) {
-    // your code here
-}
-
-// 22. Fibonacci Sequence
-const n1 = 10;
-// TODO: Write a function to generate the Fibonacci sequence up to n elements
-function fibonacci(n) {
-    // your code here
-}
 
 // 23. Find Missing Number
 const numbers8 = [1, 2, 4, 5];
 // TODO: Write a function to find the missing number in an array of 1 to n
 function findMissingNumber(arr, n) {
-    // your code here
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] + arr[i+1] !== -1) {
+            console.log(`The missing number is:`,arr[i] + arr[i+1]);
+            
+        }
+        
+    }
 }
-
-// 24. Binary Search
-const sortedArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const target = 7;
-// TODO: Write a function to perform binary search on a sorted array
-function binarySearch(arr, target) {
-    // your code here
-}
+// findMissingNumber(numbers8,)
 
 // 25. Matrix Transpose
 const matrix = [
@@ -352,48 +367,14 @@ const matrix = [
 ];
 // TODO: Write a function to transpose a matrix
 function transposeMatrix(matrix) {
-    // your code here
-}
+    for(let i = 0; i < matrix.length; i++) {
+        let row = " "
+        for (let j = 0; j < matrix.length; j++) {
+            row += ` ${matrix[j][i]} `            
+        }
+        console.log(row);
 
-// 26. Validate Brackets
-const string8 = "{[()]}";
-// TODO: Write a function to validate if the brackets in a string are balanced
-function validateBrackets(str) {
-    // your code here
-}
-
-// 27. Longest Increasing Subsequence
-const numbers9 = [10, 9, 2, 5, 3, 7, 101, 18];
-// TODO: Write a function to find the longest increasing subsequence in an array
-function longestIncreasingSubsequence(arr) {
-    // your code here
-}
-
-// 28. Permutations
-const string9 = "abc";
-// TODO: Write a function to generate all permutations of a string
-function permutations(str) {
-    // your code here
-}
-
-// 29. Knapsack Problem
-const knapsackItems = [
-  { weight: 2, value: 3 },
-  { weight: 3, value: 4 },
-  { weight: 4, value: 5 },
-];
-const capacity = 5;
-// TODO: Write a function to solve the knapsack problem for given items and capacity
-function knapsack(items, capacity) {
-    // your code here
-}
-
-// 30. LRU Cache
-// TODO: Write a class to implement an LRU (Least Recently Used) cache
-class LRUCache {
-    constructor(capacity) {
-        // your code here
     }
-
-    // Add methods to get and put values in the cache
+    
 }
+// transposeMatrix(matrix)
